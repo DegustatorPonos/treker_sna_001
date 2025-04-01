@@ -1,0 +1,30 @@
+﻿<Window x:Class="treker_sna_001.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:treker_sna_001"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        
+        <Frame Name="mainFrame" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="3" Grid.RowSpan="2" NavigationUIVisibility="Hidden" Visibility="Hidden"/>
+        <StackPanel Name="btnStackPanel" Grid.Column="0" Grid.ColumnSpan="3" HorizontalAlignment="Center">
+
+            <Button Name="openjournal" Content="Открыть меню действий с журналом" Click="openjournal_Click" VerticalAlignment="Center" Style="{DynamicResource mainMenuButtonStyle}"/>
+            <Button Name="openreminder" Content="Открыть меню напоминаний" Click="openreminder_Click" VerticalAlignment="Center" Style="{DynamicResource mainMenuButtonStyle}"/>
+            <Button Name="openhabit" Content="Открыть меню привычек" Click="openhabit_Click" VerticalAlignment="Center" Style="{DynamicResource mainMenuButtonStyle}"/>
+        </StackPanel>
+        
+    </Grid>
+</Window>
