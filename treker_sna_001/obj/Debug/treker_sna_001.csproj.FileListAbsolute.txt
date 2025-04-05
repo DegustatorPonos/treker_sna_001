@@ -30,3 +30,5 @@ C:\Users\хорек2\source\repos\treker_sna_001\treker_sna_001\obj\Debug\treker
 C:\Users\хорек2\source\repos\treker_sna_001\treker_sna_001\obj\Debug\openFrameStyleMainWin.baml
 C:\Users\хорек2\source\repos\treker_sna_001\treker_sna_001\obj\Debug\startStyleMainWin.baml
 C:\Users\хорек2\source\repos\treker_sna_001\treker_sna_001\obj\Debug\App.baml
+C:\Users\хорек2\source\repos\treker_sna_001\treker_sna_001\obj\Debug\regWindow.g.cs
+C:\Users\хорек2\source\repos\treker_sna_001\treker_sna_001\obj\Debug\regWindow.baml

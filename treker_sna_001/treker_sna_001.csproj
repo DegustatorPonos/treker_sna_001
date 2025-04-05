@@ -47,6 +47,8 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -67,6 +69,9 @@
     </ApplicationDefinition>
     <Compile Include="addNoteWindow.xaml.cs">
       <DependentUpon>addNoteWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="regWindow.xaml.cs">
+      <DependentUpon>regWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Test1.xaml.cs">
       <DependentUpon>Test1.xaml</DependentUpon>
@@ -102,6 +107,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="openFrameStyleMainWin.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="regWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -144,6 +153,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="key-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="user-icon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

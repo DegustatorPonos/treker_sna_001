@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="userBDtest1" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+  <EntityContainer Name="userBDtest1Container" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="users" EntityType="userBDtest1.user" />
+    <EntitySet Name="passwords" EntityType="userBDtest1.password" />
+    <AssociationSet Name="userpassword" Association="userBDtest1.userpassword">
+      <End Role="user" EntitySet="users" />
+      <End Role="password" EntitySet="passwords" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="user">
+    <Key>
+      <PropertyRef Name="IdUser" />
+    </Key>
+    <Property Name="IdUser" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" />
+    <NavigationProperty Name="password" Relationship="userBDtest1.userpassword" FromRole="user" ToRole="password" />
+  </EntityType>
+  <EntityType Name="password">
+    <Key>
+      <PropertyRef Name="IdPassword" />
+    </Key>
+    <Property Name="IdPassword" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="userName" Type="String" Nullable="false" />
+    <NavigationProperty Name="user" Relationship="userBDtest1.userpassword" FromRole="password" ToRole="user" />
+  </EntityType>
+  <Association Name="userpassword">
+    <End Type="userBDtest1.user" Role="user" Multiplicity="1" />
+    <End Type="userBDtest1.password" Role="password" Multiplicity="1" />
+  </Association>
+</Schema>
