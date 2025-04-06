@@ -70,14 +70,35 @@
     <Compile Include="addNoteWindow.xaml.cs">
       <DependentUpon>addNoteWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Journal.cs">
+      <DependentUpon>ModelBD1T.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelBD1T.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelBD1T.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelBD1T.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelBD1T.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelBD1T.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelBD1T.edmx</DependentUpon>
+    </Compile>
     <Compile Include="regWindow.xaml.cs">
       <DependentUpon>regWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Test1.xaml.cs">
       <DependentUpon>Test1.xaml</DependentUpon>
     </Compile>
-    <Compile Include="wtiterJournalPage.xaml.cs">
-      <DependentUpon>wtiterJournalPage.xaml</DependentUpon>
+    <Compile Include="User.cs">
+      <DependentUpon>ModelBD1T.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WakeUpperPage.xaml.cs">
+      <DependentUpon>WakeUpperPage.xaml</DependentUpon>
     </Compile>
     <Page Include="addNoteWindow.xaml">
       <SubType>Designer</SubType>
@@ -122,7 +143,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="wtiterJournalPage.xaml">
+    <Page Include="WakeUpperPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -145,6 +166,13 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EntityDeploy Include="ModelBD1T.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ModelBD1T.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="ModelBD1T.edmx.diagram">
+      <DependentUpon>ModelBD1T.edmx</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -159,6 +187,22 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="user-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ModelBD1T.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>ModelBD1T.Context.cs</LastGenOutput>
+      <DependentUpon>ModelBD1T.edmx</DependentUpon>
+    </Content>
+    <Content Include="ModelBD1T.edmx.sql" />
+    <Content Include="ModelBD1T.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>ModelBD1T.cs</LastGenOutput>
+      <DependentUpon>ModelBD1T.edmx</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

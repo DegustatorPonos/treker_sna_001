@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ModelBD1TStoreContainer" CdmEntityContainer="ModelBD1TContainer">
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="IsTypeOf(ModelBD1T.User)">
+        <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="IdUser" ColumnName="IdUser" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Login" ColumnName="Login" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Journals">
+      <EntityTypeMapping TypeName="IsTypeOf(ModelBD1T.Journal)">
+        <MappingFragment StoreEntitySet="Journals">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="UserIdUser" ColumnName="UserIdUser" />
+          <ScalarProperty Name="TypeDream" ColumnName="TypeDream" />
+          <ScalarProperty Name="Feelings" ColumnName="Feelings" />
+          <ScalarProperty Name="WakeUpCount" ColumnName="WakeUpCount" />
+          <ScalarProperty Name="TimeDown" ColumnName="TimeDown" />
+          <ScalarProperty Name="TimeWakeUp" ColumnName="TimeWakeUp" />
+          <ScalarProperty Name="Stress" ColumnName="Stress" />
+          <ScalarProperty Name="Phisical" ColumnName="Phisical" />
+          <ScalarProperty Name="Temperature" ColumnName="Temperature" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

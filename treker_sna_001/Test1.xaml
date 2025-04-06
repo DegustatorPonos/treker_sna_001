@@ -8,6 +8,102 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="Test1">
 
+    <Page.Resources>
+        <Style x:Key="ButtonStyle" TargetType="{x:Type ContentControl}">
+            <Setter Property="Background" Value="#483D8B"/>
+            <!-- Deep Indigo -->
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Padding" Value="15"/>
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type ContentControl}">
+                        <Border Background="{TemplateBinding Background}"
+                    BorderBrush="{TemplateBinding BorderBrush}"
+                    BorderThickness="{TemplateBinding BorderThickness}"
+                    CornerRadius="10">
+                            <!-- Adjust for rounded corners -->
+                            <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                  VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                  Margin="{TemplateBinding Padding}"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="#6A5ACD"/>
+                    <!-- Slate Blue -->
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
+        <Style x:Key="RadioButtonStyle" TargetType="{x:Type RadioButton}" BasedOn="{StaticResource ButtonStyle}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type RadioButton}">
+                        <Grid>
+                            <Border Background="{TemplateBinding Background}"
+                    BorderBrush="{TemplateBinding BorderBrush}"
+                    BorderThickness="{TemplateBinding BorderThickness}"
+                    CornerRadius="10">
+                                <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                  VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                  Margin="{TemplateBinding Padding}"/>
+                            </Border>
+                            <Ellipse HorizontalAlignment="Left" VerticalAlignment="Center" Width="12" Height="12" Margin="10,0,0,0"
+                     Fill="White" StrokeThickness="1" Stroke="#483D8B" Visibility="Collapsed"  />
+                            <Ellipse HorizontalAlignment="Left" VerticalAlignment="Center" Width="6" Height="6" Margin="13,0,0,0"
+                     Fill="#483D8B"  Visibility="Collapsed"/>
+                        </Grid>
+                        
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="CheckboxStyle" TargetType="{x:Type CheckBox}" BasedOn="{StaticResource ButtonStyle}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type CheckBox}">
+                        <Grid>
+                            <Border Background="{TemplateBinding Background}"
+                  BorderBrush="{TemplateBinding BorderBrush}"
+                  BorderThickness="{TemplateBinding BorderThickness}"
+                  CornerRadius="10">
+                                <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                Margin="{TemplateBinding Padding}"/>
+                            </Border>
+
+                            <Path x:Name="CheckMark"
+                  Data="M0,0 L5,5 L10,0"
+                  Stroke="White"
+                  StrokeThickness="2"
+                  HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10,0,0,0"
+                  Visibility="Collapsed"/>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsChecked" Value="True">
+                                <Setter TargetName="CheckMark" Property="Visibility" Value="Visible"/>
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#6A5ACD"/>
+                                <!-- Slate Blue -->
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Page.Resources>
+        
     <Grid>
-        </Grid>
+        <StackPanel>
+            <RadioButton Style="{StaticResource RadioButtonStyle}" Content="Radio Button 1" />
+            <CheckBox Style="{StaticResource CheckboxStyle}" Content="Check Box 1" />
+        </StackPanel>
+    </Grid>
 </Page>

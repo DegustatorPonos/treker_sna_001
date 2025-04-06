@@ -42,7 +42,7 @@ namespace treker_sna_001
 
         private void btnLogin_Click(object sender, RoutedEventArgs e)
         {
-            if(txtUser.Text == "test1user" && txtPass.Password == "test1pass")
+            if(txtUser.Text == "t" && txtPass.Password == "t")
             {
                 MainWindow mainWindow = new MainWindow();
                 mainWindow.Show();

@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="ModelBD1T" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+  <EntityContainer Name="ModelBD1TContainer" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Users" EntityType="ModelBD1T.User" />
+    <EntitySet Name="Journals" EntityType="ModelBD1T.Journal" />
+    <AssociationSet Name="UserJournal" Association="ModelBD1T.UserJournal">
+      <End Role="User" EntitySet="Users" />
+      <End Role="Journal" EntitySet="Journals" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="IdUser" />
+    </Key>
+    <Property Name="IdUser" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Password" Type="String" Nullable="false" />
+    <Property Name="Login" Type="String" Nullable="false" />
+    <NavigationProperty Name="Journal" Relationship="ModelBD1T.UserJournal" FromRole="User" ToRole="Journal" />
+  </EntityType>
+  <EntityType Name="Journal">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <NavigationProperty Name="User" Relationship="ModelBD1T.UserJournal" FromRole="Journal" ToRole="User" />
+    <Property Name="UserIdUser" Type="Int32" Nullable="false" />
+    <Property Name="TypeDream" Type="String" Nullable="false" />
+    <Property Name="Feelings" Type="String" Nullable="false" />
+    <Property Name="WakeUpCount" Type="Int32" Nullable="false" />
+    <Property Name="TimeDown" Type="DateTime" Nullable="false" />
+    <Property Name="TimeWakeUp" Type="DateTime" Nullable="false" />
+    <Property Name="Stress" Type="String" Nullable="false" />
+    <Property Name="Phisical" Type="String" Nullable="false" />
+    <Property Name="Temperature" Type="String" Nullable="false" />
+  </EntityType>
+  <Association Name="UserJournal">
+    <End Type="ModelBD1T.User" Role="User" Multiplicity="1" />
+    <End Type="ModelBD1T.Journal" Role="Journal" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="IdUser" />
+      </Principal>
+      <Dependent Role="Journal">
+        <PropertyRef Name="UserIdUser" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

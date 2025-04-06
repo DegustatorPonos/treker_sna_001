@@ -5,26 +5,136 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:treker_sna_001"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-        </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="auto"/>
-            <RowDefinition/>
-            <RowDefinition/>
-        </Grid.RowDefinitions>
-        
-        <Frame Name="mainFrame" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="3" Grid.RowSpan="2" NavigationUIVisibility="Hidden" Visibility="Hidden"/>
-        <StackPanel Name="btnStackPanel" Grid.Column="0" Grid.ColumnSpan="3" HorizontalAlignment="Center">
+        Height="450" Width="800"
+        Style="{DynamicResource WindowStyle}">
+    <Border CornerRadius="12">
+        <Border Style="{DynamicResource BorderStyle}">
+            <StackPanel>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="30"/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
 
-            <Button Name="openjournal" Content="Открыть меню действий с журналом" Click="openjournal_Click" VerticalAlignment="Center" Style="{DynamicResource mainMenuButtonStyle}"/>
-            <Button Name="openreminder" Content="Открыть меню напоминаний" Click="openreminder_Click" VerticalAlignment="Center" Style="{DynamicResource mainMenuButtonStyle}"/>
-            <Button Name="openhabit" Content="Открыть меню привычек" Click="openhabit_Click" VerticalAlignment="Center" Style="{DynamicResource mainMenuButtonStyle}"/>
-        </StackPanel>
-        
-    </Grid>
+                    <Grid Grid.Row="0">
+
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition Width="25"/>
+                            <ColumnDefinition Width="25"/>
+                            <ColumnDefinition Width="5"/>
+                        </Grid.ColumnDefinitions>
+
+                        <TextBlock Text="ГЛАВНОЕ МЕНЮ"
+                   Foreground="DarkGray"
+                   FontSize="10"
+                   FontFamily="Montserrat"
+                   Grid.Column="0"
+                   VerticalAlignment="Center"
+                   Margin="10,0,0,0" Grid.ColumnSpan="5"/>
+
+                        <Button x:Name="btnMinimize"                           
+                BorderThickness="0"
+                Content="-"
+                Foreground="White"
+                FontSize="16"
+                FontFamily="Montserrat"
+                Cursor="Hand"
+                Grid.Column="1"
+                Click="btnMinimize_Click">
+
+                            <Button.Style>
+                                <Style TargetType="Button">
+                                    <Setter Property="Background" Value="#28AEED"/>
+                                    <Style.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter Property="Background" Value="#278BEF"/>
+                                        </Trigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Button.Style>
+
+                            <Button.Template>
+                                <ControlTemplate TargetType="Button">
+                                    <Border Width="18" Height="18"
+                            CornerRadius="9"
+                            Background="{TemplateBinding Background}">
+                                        <ContentPresenter VerticalAlignment="Center"
+                                          HorizontalAlignment="Center"/>
+                                    </Border>
+                                </ControlTemplate>
+                            </Button.Template>
+
+                        </Button>
+
+                        <Button x:Name="btnClose"                          
+                BorderThickness="0"
+                Content="X"
+                Foreground="White"
+                FontSize="12"
+                FontFamily="Montserrat"
+                Cursor="Hand"
+                Grid.Column="2"
+                Click="btnClose_Click">
+
+                            <Button.Style>
+                                <Style TargetType="Button">
+                                    <Setter Property="Background" Value="#DA34AE"/>
+                                    <Style.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter Property="Background" Value="#C62DAE"/>
+                                        </Trigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Button.Style>
+
+                            <Button.Template>
+                                <ControlTemplate TargetType="Button">
+                                    <Border Width="18" Height="18"
+                            CornerRadius="9"
+                            Background="{TemplateBinding Background}">
+                                        <ContentPresenter VerticalAlignment="Center"
+                                          HorizontalAlignment="Center"/>
+                                    </Border>
+                                </ControlTemplate>
+                            </Button.Template>
+                        </Button>
+                    </Grid>
+                </Grid>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition MinHeight="50" Height="auto"/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+
+                    <Frame Name="mainFrame" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="3" Grid.RowSpan="2" NavigationUIVisibility="Hidden" Visibility="Hidden"/>
+                    <StackPanel Name="btnStackPanel" Grid.Column="0" Grid.ColumnSpan="3" HorizontalAlignment="Center">
+
+                        <Button Name="openjournal" Click="openjournal_Click" Style="{DynamicResource mainMenuButtonStyle}">
+                            <Button.Content>
+                                <TextBlock Text="Открыть меню действий с журналом" TextWrapping="Wrap" TextAlignment="Center"/>
+                            </Button.Content>
+                        </Button>
+                        <Button Name="openreminder" Click="openreminder_Click" Style="{DynamicResource mainMenuButtonStyle}">
+                            <Button.Content>
+                                <TextBlock Text="Открыть меню напоминаний" TextWrapping="Wrap" TextAlignment="Center"/>
+                            </Button.Content>
+                        </Button>
+                        <Button Name="openhabit" Click="openhabit_Click" Style="{DynamicResource mainMenuButtonStyle}">
+                            <Button.Content>
+                                <TextBlock Text="Открыть меню привычек" TextWrapping="Wrap" TextAlignment="Center"/>
+                            </Button.Content>
+                        </Button>
+                    </StackPanel>
+
+                </Grid>
+            </StackPanel>
+        </Border>
+    </Border>
 </Window>

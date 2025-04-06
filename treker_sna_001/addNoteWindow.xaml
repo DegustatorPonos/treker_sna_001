@@ -5,69 +5,170 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:treker_sna_001"
         mc:Ignorable="d"
-        Title="Внесение записи" Height="450" Width="800">
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="auto"/>
-            <RowDefinition/>
-        </Grid.RowDefinitions>
-        <TextBlock Text="Введите данные:" FontSize="16" Grid.Row="0"/>
-        <StackPanel Grid.Row="1">
+        Title="Внесение записи" Height="450" Width="800"
+        Style="{DynamicResource WindowStyle}">
+    <Border CornerRadius="12">
+        <Border Style="{DynamicResource BorderStyle}">
             <StackPanel>
-                <TextBlock Text="Тип сна"/>
-                <RadioButton Content="Поверхностный"/>
-                <RadioButton Content="Глубокий"/>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="30"/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+
+                    <Grid Grid.Row="0">
+
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition Width="25"/>
+                            <ColumnDefinition Width="25"/>
+                            <ColumnDefinition Width="5"/>
+                        </Grid.ColumnDefinitions>
+
+                        <TextBlock Text="ДОБАВЛЕНИЕ ЗАПСИ"
+   Foreground="DarkGray"
+   FontSize="10"
+   FontFamily="Montserrat"
+   Grid.Column="0"
+   VerticalAlignment="Center"
+   Margin="10,0,0,0" Grid.ColumnSpan="5"/>
+
+                        <Button x:Name="btnMinimize"                           
+BorderThickness="0"
+Content="-"
+Foreground="White"
+FontSize="16"
+FontFamily="Montserrat"
+Cursor="Hand"
+Grid.Column="1"
+Click="btnMinimize_Click">
+
+                            <Button.Style>
+                                <Style TargetType="Button">
+                                    <Setter Property="Background" Value="#28AEED"/>
+                                    <Style.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter Property="Background" Value="#278BEF"/>
+                                        </Trigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Button.Style>
+
+                            <Button.Template>
+                                <ControlTemplate TargetType="Button">
+                                    <Border Width="18" Height="18"
+            CornerRadius="9"
+            Background="{TemplateBinding Background}">
+                                        <ContentPresenter VerticalAlignment="Center"
+                          HorizontalAlignment="Center"/>
+                                    </Border>
+                                </ControlTemplate>
+                            </Button.Template>
+
+                        </Button>
+
+                        <Button x:Name="btnClose"                          
+BorderThickness="0"
+Content="X"
+Foreground="White"
+FontSize="12"
+FontFamily="Montserrat"
+Cursor="Hand"
+Grid.Column="2"
+Click="btnClose_Click">
+
+                            <Button.Style>
+                                <Style TargetType="Button">
+                                    <Setter Property="Background" Value="#DA34AE"/>
+                                    <Style.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter Property="Background" Value="#C62DAE"/>
+                                        </Trigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Button.Style>
+
+                            <Button.Template>
+                                <ControlTemplate TargetType="Button">
+                                    <Border Width="18" Height="18"
+            CornerRadius="9"
+            Background="{TemplateBinding Background}">
+                                        <ContentPresenter VerticalAlignment="Center"
+                          HorizontalAlignment="Center"/>
+                                    </Border>
+                                </ControlTemplate>
+                            </Button.Template>
+                        </Button>
+                    </Grid>
+                </Grid>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <TextBlock Text="Введите данные:" FontSize="16" Grid.Row="0"/>
+                    <StackPanel Grid.Row="1">
+                        <StackPanel>
+                            <TextBlock Text="Тип сна"/>
+                            <RadioButton Content="Поверхностный"/>
+                            <RadioButton Content="Глубокий"/>
+                        </StackPanel>
+                        <StackPanel>
+                            <TextBlock Text="Ощущения после пробуждения"/>
+                            <RadioButton Content="Бодрость и свежесть"/>
+                            <RadioButton Content="Разбитость и усталость"/>
+                        </StackPanel>
+                        <TextBlock Text="Количество пробуждений"/>
+                        <ComboBox Name="countUp" Width="40" HorizontalAlignment="Left"/>
+                        <StackPanel>
+                            <RadioButton Content="Низкая температура в спальне" Name="coldTemperature"/>
+                            <RadioButton Content="Высокая температура в спальне" Name="hotTemperature"/>
+                        </StackPanel>
+                        <StackPanel>
+                            <TextBlock Text="Выберите внешние факторы, с которыми пришлось столкнуться перед сном"/>
+                            <CheckBox Content="Стресс" Name="stress"/>
+                            <CheckBox Content="Физическая нагрузка" Name="phisicalAktivities"/>
+                        </StackPanel>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+
+                            <!-- Start Time -->
+                            <Label Content="Время засыпания:" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Center"/>
+                            <StackPanel Orientation="Horizontal" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Center">
+                                <Label Content="Час:"/>
+                                <ComboBox x:Name="StartHourComboBox" Width="50" Margin="5"/>
+                                <Label Content="Минута:"/>
+                                <ComboBox x:Name="StartMinuteComboBox" Width="50" Margin="5"/>
+                            </StackPanel>
+
+                            <!-- End Time -->
+                            <Label Content="Время пробуждения:" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Center"/>
+                            <StackPanel Orientation="Horizontal" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center">
+                                <Label Content="Час:"/>
+                                <ComboBox x:Name="EndHourComboBox" Width="50" Margin="5"/>
+                                <Label Content="Минута:"/>
+                                <ComboBox x:Name="EndMinuteComboBox" Width="50" Margin="5"/>
+                            </StackPanel>
+
+                            <!-- Calculate Button -->
+                            <Button Content="Вычислить" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Margin="10" Click="CalculateButton_Click"/>
+
+                            <!-- Result Label -->
+                            <Label x:Name="ResultLabel" Content="" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" HorizontalAlignment="Center"/>
+                        </Grid>
+
+                    </StackPanel>
+                </Grid>
             </StackPanel>
-            <StackPanel>
-                <TextBlock Text="Ощущения после пробуждения"/>
-                <RadioButton Content="Бодрость и свежесть"/>
-                <RadioButton Content="Разбитость и усталость"/>
-            </StackPanel>
-            <TextBlock Text="Количество пробуждений"/>
-            <ComboBox Name="countUp" Width="40" HorizontalAlignment="Left"/>
-            <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                </Grid.ColumnDefinitions>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
-                </Grid.RowDefinitions>
-
-                <!-- Start Time -->
-                <Label Content="Время засыпания:" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Center"/>
-                <StackPanel Orientation="Horizontal" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Center">
-                    <Label Content="Час:"/>
-                    <ComboBox x:Name="StartHourComboBox" Width="50" Margin="5"/>
-                    <Label Content="Минута:"/>
-                    <ComboBox x:Name="StartMinuteComboBox" Width="50" Margin="5"/>
-                </StackPanel>
-
-                <!-- End Time -->
-                <Label Content="Время пробуждения:" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Center"/>
-                <StackPanel Orientation="Horizontal" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center">
-                    <Label Content="Час:"/>
-                    <ComboBox x:Name="EndHourComboBox" Width="50" Margin="5"/>
-                    <Label Content="Минута:"/>
-                    <ComboBox x:Name="EndMinuteComboBox" Width="50" Margin="5"/>
-                </StackPanel>
-
-                <!-- Calculate Button -->
-                <Button Content="Вычислить" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Margin="10" Click="CalculateButton_Click"/>
-
-                <!-- Result Label -->
-                <Label x:Name="ResultLabel" Content="" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" HorizontalAlignment="Center"/>
-            </Grid>
-            <StackPanel>
-                <TextBlock Text="Выберите внешние факторы, с которыми пришлось столкнуться перед сном"/>
-                <CheckBox Content="Стресс" Name="stress"/>
-                <CheckBox Content="Физическая нагрузка" Name="phisicalAktivities"/>
-                <CheckBox Content="Низкая температура в спальне" Name="coldTemperature"/>
-                <CheckBox Content="Высокая температура в спальне" Name="hotTemperature"/>
-            </StackPanel>
-        </StackPanel>
-    </Grid>
+        </Border>
+    </Border>
 </Window>

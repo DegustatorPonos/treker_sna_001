@@ -23,7 +23,6 @@ namespace treker_sna_001
         public MainWindow()
         {
             InitializeComponent();
-            //mainFrame.Navigate(new Test1());
         }
 
         private void openjournal_Click(object sender, RoutedEventArgs e)
@@ -41,12 +40,28 @@ namespace treker_sna_001
 
         private void openreminder_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Открыть меню напоминаний");
+            mainFrame.Navigate(new WakeUpperPage());
         }
 
         private void openhabit_Click(object sender, RoutedEventArgs e)
         {
             MessageBox.Show("Открыть меню привычек");
         }
+        private void Window_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if (e.LeftButton == MouseButtonState.Pressed)
+                DragMove();
+        }
+
+        private void btnMinimize_Click(object sender, RoutedEventArgs e)
+        {
+            WindowState = WindowState.Minimized;
+        }
+
+        private void btnClose_Click(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
+        }
+
     }
 }
