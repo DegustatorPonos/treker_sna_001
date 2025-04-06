@@ -20,6 +20,16 @@ namespace treker_sna_001
     /// </summary>
     public partial class WakeUpperPage : Page
     {
+        List<string> napominanies = new List<string>()
+        {
+            "пробуждения",
+            "засыпания",
+            "другое"
+        };
+
+        public int Hour;
+        public int Minute;
+
         public WakeUpperPage()
         {
             InitializeComponent();
@@ -30,18 +40,29 @@ namespace treker_sna_001
             // Заполняем списки часов
             for (int i = 0; i <= 23; i++)
             {
-                StartHourComboBox.Items.Add(i.ToString("D2")); // Форматируем для отображения с ведущим нулем
+                HourComboBox.Items.Add(i.ToString("D2")); // Форматируем для отображения с ведущим нулем
             }
 
             // Заполняем списки минут
             for (int i = 0; i <= 59; i++)
             {
-                StartMinuteComboBox.Items.Add(i.ToString("D2"));  // Форматируем для отображения с ведущим нулем
+                MinuteComboBox.Items.Add(i.ToString("D2"));  // Форматируем для отображения с ведущим нулем
             }
 
+            napomainanie.ItemsSource = napominanies;
+
             // Устанавливаем значения по умолчанию
-            StartHourComboBox.SelectedIndex = 0;
-            StartMinuteComboBox.SelectedIndex = 0;
+            HourComboBox.SelectedIndex = 0;
+            MinuteComboBox.SelectedIndex = 0;
+        }
+
+        private void Set_Click(object sender, RoutedEventArgs e)
+        {
+            // Получаем выбранные значения из списков
+            Hour = int.Parse(HourComboBox.SelectedItem.ToString());
+            Minute = int.Parse(MinuteComboBox.SelectedItem.ToString());
+
+
         }
     }
 }

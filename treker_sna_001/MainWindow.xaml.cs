@@ -27,19 +27,13 @@ namespace treker_sna_001
 
         private void openjournal_Click(object sender, RoutedEventArgs e)
         {
-            Uri uri = new Uri("openFrameStyleMainWin.xaml", UriKind.Relative);
-            ResourceDictionary resourceDictionary = (ResourceDictionary)Application.LoadComponent(uri);
-            Application.Current.Resources.Clear();
-            Application.Current.Resources.MergedDictionaries.Add(resourceDictionary);
-
-            btnStackPanel.Orientation = Orientation.Horizontal;
-            mainFrame.Visibility = Visibility.Visible;
-                
+            frameTrans();
             mainFrame.Navigate(new journalPage());
         }
 
         private void openreminder_Click(object sender, RoutedEventArgs e)
         {
+            frameTrans();
             mainFrame.Navigate(new WakeUpperPage());
         }
 
@@ -63,5 +57,16 @@ namespace treker_sna_001
             Application.Current.Shutdown();
         }
 
+        private void frameTrans()
+        {
+
+            Uri uri = new Uri("openFrameStyleMainWin.xaml", UriKind.Relative);
+            ResourceDictionary resourceDictionary = (ResourceDictionary)Application.LoadComponent(uri);
+            Application.Current.Resources.Clear();
+            Application.Current.Resources.MergedDictionaries.Add(resourceDictionary);
+
+            btnStackPanel.Orientation = Orientation.Horizontal;
+            mainFrame.Visibility = Visibility.Visible;
+        }
     }
 }

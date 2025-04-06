@@ -16,9 +16,10 @@
                     <TextBlock Text="Установить напоминание для: "/>
                     <ComboBox Name="napomainanie" Width="100"/>
                     <TextBlock Text=" в "/>
-                    <ComboBox x:Name="StartHourComboBox" Width="50"/>
-                    <ComboBox x:Name="StartMinuteComboBox" Width="50"/>
+                    <ComboBox x:Name="HourComboBox" Width="50"/>
+                    <ComboBox x:Name="MinuteComboBox" Width="50"/>
                 </StackPanel>
+                <Button Content="Установить" Name="Set" Click="Set_Click"/>
             </StackPanel>
         </StackPanel>
     </Grid>
