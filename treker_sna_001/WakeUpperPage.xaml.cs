@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Diagnostics.Eventing.Reader;
 using System.Linq;
+using System.Media;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -33,7 +34,7 @@ namespace treker_sna_001
         public int Minute;
         private DateTime alarmTime;
         private DispatcherTimer timer;
-        private string soundPath;//путь к звуковому файлу
+        private string soundPath = "music1.mp3"; //путь к звуковому файлу
 
         public WakeUpperPage()
         {
@@ -78,6 +79,8 @@ namespace treker_sna_001
             TimeSpan timeDifference = CalculateTimeDifference(hourNow, minuteNow, Hour, Minute);
             MessageBox.Show($"Будильник сработает через {timeDifference.Hours.ToString()} часов {timeDifference.Minutes.ToString()} минут");
             alarm();
+            AlarmDialog alarmDialog = new AlarmDialog();
+            alarmDialog.ShowDialog();
         }
 
         private TimeSpan CalculateTimeDifference(int startHour, int startMinute, int endHour, int endMinute)
@@ -121,7 +124,20 @@ namespace treker_sna_001
         {
             AlarmDialog alarmDialog = new AlarmDialog();
             alarmDialog.ShowDialog();
+
+            /*try
+            {
+                MediaPlayer player = new MediaPlayer();
+                player.Open(new Uri (soundPath));
+                alarmDialog.Closed += (s, args) => { player.Stop(); };
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message );
+            }*/
         }
+
+
 
     }
 }

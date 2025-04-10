@@ -93,7 +93,6 @@ namespace treker_sna_001
                 // Отображаем результат
                 ResultLabel.Content = $"Разница: {timeDifference.Hours} часов, {timeDifference.Minutes} минут";
                 res2 = $"{timeDifference.Hours}:{timeDifference.Minutes}";
-                WriterBDtxt();
             }
             catch (Exception ex)
             {
@@ -108,6 +107,7 @@ namespace treker_sna_001
             {
                 MessageBox.Show("[eqyz");
             }
+            this.Close();
         }
 
 

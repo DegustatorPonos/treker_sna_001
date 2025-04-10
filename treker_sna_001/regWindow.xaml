@@ -252,6 +252,7 @@
 
                     </StackPanel>-->
 
+                    <ListBox Name="logs" DisplayMemberPath="userLogin"/>
                 </StackPanel>
 
             </Grid>

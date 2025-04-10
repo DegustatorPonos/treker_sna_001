@@ -42,6 +42,38 @@ namespace treker_sna_001
 
         private void btnLogin_Click(object sender, RoutedEventArgs e)
         {
+            
+            string login = txtUser.Text;
+            string password = txtPass.Password;
+            if (login != ""&& password != "")
+            {
+                using(UsersBD1Entities db =  new UsersBD1Entities())
+                {
+                    List<Users> users = new List<Users>();
+                    users = db.Users.ToList();
+                    //logs.ItemsSource = users; //для проверки получения пользователей
+                    foreach (Users user in users)
+                    {
+                        if(user.userLogin == login)
+                        {
+                            if(user.userPassword == password)
+                            {
+                                MainWindow mainWindow = new MainWindow();
+                                mainWindow.Show();
+                                this.Close();
+                            }
+                            else
+                            {
+                                MessageBox.Show("Неверный пароль!");
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("Неправильный логин и/или пароль");
+                        }
+                    }
+                }
+            }
             if(txtUser.Text == "t" && txtPass.Password == "t")
             {
                 MainWindow mainWindow = new MainWindow();

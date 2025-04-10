@@ -73,6 +73,21 @@
     <Compile Include="AlarmDialog.xaml.cs">
       <DependentUpon>AlarmDialog.xaml</DependentUpon>
     </Compile>
+    <Compile Include="autorization.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>autorization.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="autorization.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>autorization.tt</DependentUpon>
+    </Compile>
+    <Compile Include="autorization.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>autorization.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Journal.cs">
       <DependentUpon>ModelBD1T.tt</DependentUpon>
     </Compile>
@@ -99,6 +114,9 @@
     </Compile>
     <Compile Include="User.cs">
       <DependentUpon>ModelBD1T.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Users.cs">
+      <DependentUpon>autorization.tt</DependentUpon>
     </Compile>
     <Compile Include="WakeUpperPage.xaml.cs">
       <DependentUpon>WakeUpperPage.xaml</DependentUpon>
@@ -177,6 +195,13 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>ModelBD1T.Designer.cs</LastGenOutput>
     </EntityDeploy>
+    <EntityDeploy Include="autorization.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>autorization.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="autorization.edmx.diagram">
+      <DependentUpon>autorization.edmx</DependentUpon>
+    </None>
     <None Include="ModelBD1T.edmx.diagram">
       <DependentUpon>ModelBD1T.edmx</DependentUpon>
     </None>
@@ -196,6 +221,16 @@
     <Resource Include="user-icon.png" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="autorization.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>autorization.edmx</DependentUpon>
+      <LastGenOutput>autorization.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="autorization.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>autorization.edmx</DependentUpon>
+      <LastGenOutput>autorization.cs</LastGenOutput>
+    </Content>
     <Content Include="ModelBD1T.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>ModelBD1T.Context.cs</LastGenOutput>
@@ -207,6 +242,7 @@
       <LastGenOutput>ModelBD1T.cs</LastGenOutput>
       <DependentUpon>ModelBD1T.edmx</DependentUpon>
     </Content>
+    <Content Include="music1.mp3" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

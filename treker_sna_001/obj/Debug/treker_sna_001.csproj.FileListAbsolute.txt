@@ -70,3 +70,5 @@ C:\Users\stud7korp2\Desktop\treker_sna_001-main\treker_sna_001\obj\Debug\WakeUpp
 C:\Users\stud7korp2\Desktop\treker_sna_001-main\treker_sna_001\obj\Debug\WakeUpperPage.baml
 C:\Users\stud7korp2\Desktop\treker_sna_001-main\treker_sna_001\obj\Debug\AlarmDialog.g.cs
 C:\Users\stud7korp2\Desktop\treker_sna_001-main\treker_sna_001\obj\Debug\AlarmDialog.baml
+C:\Users\хорек2\source\repos\treker_sna_001\treker_sna_001\obj\Debug\AlarmDialog.g.cs
+C:\Users\хорек2\source\repos\treker_sna_001\treker_sna_001\obj\Debug\AlarmDialog.baml
