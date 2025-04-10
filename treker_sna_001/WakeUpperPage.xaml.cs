@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.Eventing.Reader;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Windows.Threading;
 
 namespace treker_sna_001
 {
@@ -29,12 +31,19 @@ namespace treker_sna_001
 
         public int Hour;
         public int Minute;
+        private DateTime alarmTime;
+        private DispatcherTimer timer;
+        private string soundPath;//путь к звуковому файлу
 
         public WakeUpperPage()
         {
             InitializeComponent();
             InitializeComboBoxes();
+            timer = new DispatcherTimer();
+            timer.Interval = TimeSpan.FromSeconds(1);
+            timer.Tick += Timer_Tick;
         }
+
         private void InitializeComboBoxes()
         {
             // Заполняем списки часов
@@ -62,7 +71,57 @@ namespace treker_sna_001
             Hour = int.Parse(HourComboBox.SelectedItem.ToString());
             Minute = int.Parse(MinuteComboBox.SelectedItem.ToString());
 
+            DateTime now = DateTime.Now;
+            int hourNow = now.Hour;
+            int minuteNow = now.Minute;
 
+            TimeSpan timeDifference = CalculateTimeDifference(hourNow, minuteNow, Hour, Minute);
+            MessageBox.Show($"Будильник сработает через {timeDifference.Hours.ToString()} часов {timeDifference.Minutes.ToString()} минут");
+            alarm();
         }
+
+        private TimeSpan CalculateTimeDifference(int startHour, int startMinute, int endHour, int endMinute)
+        {
+            DateTime startTime = new DateTime(1, 1, 1, startHour, startMinute, 0);
+            DateTime endTime = new DateTime(1, 1, 1, endHour, endMinute, 0);
+
+            // Обрабатываем случай, когда конечное время раньше начального (переход через полночь)
+            if (endTime < startTime)
+            {
+                endTime = endTime.AddDays(1);  // Предполагаем, что конечное время на следующий день
+            }
+
+            return endTime - startTime;
+        }
+        private void alarm()
+        {
+            string HHmm = $"{Hour}:{Minute}";
+            if (DateTime.TryParseExact(HHmm, "HH:mm", null, System.Globalization.DateTimeStyles.None, out DateTime parsedTime))
+            {
+                DateTime today = DateTime.Today;
+                alarmTime = new DateTime(today.Year, today.Month, today.Day, parsedTime.Hour, parsedTime.Minute, 0);
+                if (alarmTime <= DateTime.Now)
+                {
+                    alarmTime = alarmTime.AddDays(1);
+                }
+                MessageBox.Show($"{alarmTime.ToString("HH.mm")} {alarmTime.ToShortDateString()}");
+                timer.Start();
+            }
+        }
+
+        private void Timer_Tick(object sender, EventArgs e)
+        {
+            if (DateTime.Now >= alarmTime)
+            {
+                timer.Stop();
+                showAlarmDialog();
+            }
+        }
+        private void showAlarmDialog()
+        {
+            AlarmDialog alarmDialog = new AlarmDialog();
+            alarmDialog.ShowDialog();
+        }
+
     }
 }

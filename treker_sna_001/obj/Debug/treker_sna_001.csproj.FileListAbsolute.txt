@@ -46,7 +46,6 @@ C:\Users\stud7korp2\Desktop\treker_sna_001-main\treker_sna_001\obj\Debug\journal
 C:\Users\stud7korp2\Desktop\treker_sna_001-main\treker_sna_001\obj\Debug\MainWindow.g.cs
 C:\Users\stud7korp2\Desktop\treker_sna_001-main\treker_sna_001\obj\Debug\regWindow.g.cs
 C:\Users\stud7korp2\Desktop\treker_sna_001-main\treker_sna_001\obj\Debug\Test1.g.cs
-C:\Users\stud7korp2\Desktop\treker_sna_001-main\treker_sna_001\obj\Debug\wtiterJournalPage.g.cs
 C:\Users\stud7korp2\Desktop\treker_sna_001-main\treker_sna_001\obj\Debug\App.g.cs
 C:\Users\stud7korp2\Desktop\treker_sna_001-main\treker_sna_001\obj\Debug\treker_sna_001_MarkupCompile.cache
 C:\Users\stud7korp2\Desktop\treker_sna_001-main\treker_sna_001\obj\Debug\treker_sna_001_MarkupCompile.lref
@@ -56,7 +55,6 @@ C:\Users\stud7korp2\Desktop\treker_sna_001-main\treker_sna_001\obj\Debug\journal
 C:\Users\stud7korp2\Desktop\treker_sna_001-main\treker_sna_001\obj\Debug\MainWindow.baml
 C:\Users\stud7korp2\Desktop\treker_sna_001-main\treker_sna_001\obj\Debug\regWindow.baml
 C:\Users\stud7korp2\Desktop\treker_sna_001-main\treker_sna_001\obj\Debug\Test1.baml
-C:\Users\stud7korp2\Desktop\treker_sna_001-main\treker_sna_001\obj\Debug\wtiterJournalPage.baml
 C:\Users\stud7korp2\Desktop\treker_sna_001-main\treker_sna_001\obj\Debug\treker_sna_001.g.resources
 C:\Users\stud7korp2\Desktop\treker_sna_001-main\treker_sna_001\obj\Debug\treker_sna_001.Properties.Resources.resources
 C:\Users\stud7korp2\Desktop\treker_sna_001-main\treker_sna_001\obj\Debug\treker_sna_001.csproj.GenerateResource.cache
@@ -68,3 +66,7 @@ C:\Users\stud7korp2\Desktop\treker_sna_001-main\treker_sna_001\obj\Debug\treker_
 C:\Users\хорек2\source\repos\treker_sna_001\treker_sna_001\obj\Debug\treker_sna_001_Content.g.cs
 C:\Users\хорек2\source\repos\treker_sna_001\treker_sna_001\obj\Debug\WakeUpperPage.g.cs
 C:\Users\хорек2\source\repos\treker_sna_001\treker_sna_001\obj\Debug\WakeUpperPage.baml
+C:\Users\stud7korp2\Desktop\treker_sna_001-main\treker_sna_001\obj\Debug\WakeUpperPage.g.cs
+C:\Users\stud7korp2\Desktop\treker_sna_001-main\treker_sna_001\obj\Debug\WakeUpperPage.baml
+C:\Users\stud7korp2\Desktop\treker_sna_001-main\treker_sna_001\obj\Debug\AlarmDialog.g.cs
+C:\Users\stud7korp2\Desktop\treker_sna_001-main\treker_sna_001\obj\Debug\AlarmDialog.baml
