@@ -25,6 +25,6 @@ namespace treker_sna_001
         public string Phisical { get; set; }
         public string Temperature { get; set; }
     
-        public virtual User User { get; set; }
+        public virtual User User1 { get; set; }
     }
 }

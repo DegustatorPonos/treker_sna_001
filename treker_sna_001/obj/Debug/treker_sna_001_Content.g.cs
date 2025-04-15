@@ -8,11 +8,9 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("autorization.context.tt")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("autorization.tt")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("modelbd1t.context.tt")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("modelbd1t.edmx.sql")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("modelbd1t.tt")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("music1.mp3")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("kurs1.context.tt")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("kurs1.edmx.sql")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("kurs1.tt")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("sample.wav")]
 
 

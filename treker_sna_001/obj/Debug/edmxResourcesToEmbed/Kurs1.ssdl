@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Kurs1.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="Kurs1StoreContainer">
+    <EntitySet Name="Users" EntityType="Kurs1.Store.Users" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Journals" EntityType="Kurs1.Store.Journals" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="UserJournal1" Association="Kurs1.Store.UserJournal1">
+      <End Role="User" EntitySet="Users" />
+      <End Role="Journal" EntitySet="Journals" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="IdUser" />
+    </Key>
+    <Property Name="IdUser" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="userLogin" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="userPassword" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Journals">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserIdUser" Type="int" Nullable="false" />
+    <Property Name="TypeDream" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Feelings" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="WakeUpCount" Type="int" Nullable="false" />
+    <Property Name="TimeDown" Type="datetime" Nullable="false" />
+    <Property Name="TimeWakeUp" Type="datetime" Nullable="false" />
+    <Property Name="Stress" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Phisical" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Temperature" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <Association Name="UserJournal1">
+    <End Role="User" Type="Kurs1.Store.Users" Multiplicity="1" />
+    <End Role="Journal" Type="Kurs1.Store.Journals" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="IdUser" />
+      </Principal>
+      <Dependent Role="Journal">
+        <PropertyRef Name="UserIdUser" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

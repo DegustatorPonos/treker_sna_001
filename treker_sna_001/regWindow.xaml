@@ -165,13 +165,13 @@
                                         AlignmentX="Left"/>
                         </TextBox.Background>
                     </TextBox>
-
+                    <TextBlock Name="checkLogin" Height="20" Foreground="Red"/>
                     <TextBlock Text="Password"
                                Foreground="DarkGray"
                                FontSize="12"
                                FontWeight="Medium"
                                FontFamily="Montserrat"                             
-                               Margin="0,15,0,0"/>
+                               Margin="0,5,0,0"/>
 
                     <PasswordBox x:Name="txtPass"
                              FontSize="13"

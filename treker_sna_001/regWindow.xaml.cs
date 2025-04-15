@@ -19,6 +19,7 @@ namespace treker_sna_001
     /// </summary>
     public partial class regWindow : Window
     {
+        public string login;
         public regWindow()
         {
             InitializeComponent();
@@ -43,21 +44,24 @@ namespace treker_sna_001
         private void btnLogin_Click(object sender, RoutedEventArgs e)
         {
             
-            string login = txtUser.Text;
+            login = txtUser.Text;
             string password = txtPass.Password;
-            if (login != ""&& password != "")
+            if (login != "" && password != "")
             {
-                using(UsersBD1Entities db =  new UsersBD1Entities())
+                using (Kurs1Container db = new Kurs1Container())
                 {
-                    List<Users> users = new List<Users>();
+                    List<User> users = new List<User>();
                     users = db.Users.ToList();
                     //logs.ItemsSource = users; //для проверки получения пользователей
-                    foreach (Users user in users)
+                    foreach (User user in users)
                     {
-                        if(user.userLogin == login)
+                        if (user.userLogin == login)
                         {
-                            if(user.userPassword == password)
+                            checkLogin.Text = string.Empty;
+                            MessageBox.Show(user.userPassword);
+                            if (user.userPassword == password)
                             {
+                                GlobalData.SharedData = login;
                                 MainWindow mainWindow = new MainWindow();
                                 mainWindow.Show();
                                 this.Close();
@@ -67,17 +71,20 @@ namespace treker_sna_001
                                 MessageBox.Show("Неверный пароль!");
                             }
                         }
-                        else
+                        else if (login != user.userLogin)
                         {
-                            MessageBox.Show("Неправильный логин и/или пароль");
+                            checkLogin.Text = "Неверный логин";
                         }
                     }
                 }
             }
-            if(txtUser.Text == "t" && txtPass.Password == "t")
+            if (txtUser.Text == "t" && txtPass.Password == "t")
             {
+                GlobalData.SharedData = login;
                 MainWindow mainWindow = new MainWindow();
                 mainWindow.Show();
+                
+                MessageBox.Show(GlobalData.SharedData);
                 this.Close();
             }
         }

@@ -13,10 +13,10 @@ namespace treker_sna_001
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class UsersBD1Entities : DbContext
+    public partial class Kurs1Container : DbContext
     {
-        public UsersBD1Entities()
-            : base("name=UsersBD1Entities")
+        public Kurs1Container()
+            : base("name=Kurs1Container")
         {
         }
     
@@ -25,6 +25,7 @@ namespace treker_sna_001
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Users> Users { get; set; }
+        public virtual DbSet<User> Users { get; set; }
+        public virtual DbSet<Journal> Journals { get; set; }
     }
 }

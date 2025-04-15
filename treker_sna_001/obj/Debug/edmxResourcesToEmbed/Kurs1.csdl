@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="Kurs1" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+  <EntityContainer Name="Kurs1Container" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Users" EntityType="Kurs1.User" />
+    <EntitySet Name="Journals" EntityType="Kurs1.Journal" />
+    <AssociationSet Name="UserJournal1" Association="Kurs1.UserJournal1">
+      <End Role="User" EntitySet="Users" />
+      <End Role="Journal" EntitySet="Journals" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="IdUser" />
+    </Key>
+    <Property Name="IdUser" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="userLogin" Type="String" Nullable="false" />
+    <Property Name="userPassword" Type="String" Nullable="false" />
+    <NavigationProperty Name="Journal" Relationship="Kurs1.UserJournal1" FromRole="User" ToRole="Journal" />
+  </EntityType>
+  <EntityType Name="Journal">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserIdUser" Type="Int32" Nullable="false" />
+    <Property Name="TypeDream" Type="String" Nullable="false" />
+    <Property Name="Feelings" Type="String" Nullable="false" />
+    <Property Name="WakeUpCount" Type="Int32" Nullable="false" />
+    <Property Name="TimeDown" Type="DateTime" Nullable="false" />
+    <Property Name="TimeWakeUp" Type="DateTime" Nullable="false" />
+    <Property Name="Stress" Type="String" Nullable="false" />
+    <Property Name="Phisical" Type="String" Nullable="false" />
+    <Property Name="Temperature" Type="String" Nullable="false" />
+    <NavigationProperty Name="User1" Relationship="Kurs1.UserJournal1" FromRole="Journal" ToRole="User" />
+  </EntityType>
+  <Association Name="UserJournal1">
+    <End Type="Kurs1.User" Role="User" Multiplicity="1" />
+    <End Type="Kurs1.Journal" Role="Journal" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="IdUser" />
+      </Principal>
+      <Dependent Role="Journal">
+        <PropertyRef Name="UserIdUser" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

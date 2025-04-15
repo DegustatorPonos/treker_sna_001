@@ -2,13 +2,13 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 04/05/2025 13:10:19
--- Generated from EDMX file: C:\Users\stud7korp2\Desktop\treker_sna_001-main\treker_sna_001\ModelBD1T.edmx
+-- Date Created: 04/12/2025 20:12:35
+-- Generated from EDMX file: C:\Users\хорек2\source\repos\treker_sna_001\treker_sna_001\Kurs1.edmx
 -- --------------------------------------------------
 
 SET QUOTED_IDENTIFIER OFF;
 GO
-USE [kursovaya_Kovylin];
+USE [Kurs1];
 GO
 IF SCHEMA_ID(N'dbo') IS NULL EXECUTE(N'CREATE SCHEMA [dbo]');
 GO
@@ -17,20 +17,11 @@ GO
 -- Dropping existing FOREIGN KEY constraints
 -- --------------------------------------------------
 
-IF OBJECT_ID(N'[dbo].[FK_UserJournal]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[Journals] DROP CONSTRAINT [FK_UserJournal];
-GO
 
 -- --------------------------------------------------
 -- Dropping existing tables
 -- --------------------------------------------------
 
-IF OBJECT_ID(N'[dbo].[Users]', 'U') IS NOT NULL
-    DROP TABLE [dbo].[Users];
-GO
-IF OBJECT_ID(N'[dbo].[Journals]', 'U') IS NOT NULL
-    DROP TABLE [dbo].[Journals];
-GO
 
 -- --------------------------------------------------
 -- Creating all tables
@@ -39,8 +30,8 @@ GO
 -- Creating table 'Users'
 CREATE TABLE [dbo].[Users] (
     [IdUser] int IDENTITY(1,1) NOT NULL,
-    [Password] nvarchar(max)  NOT NULL,
-    [Login] nvarchar(max)  NOT NULL
+    [userLogin] nvarchar(max)  NOT NULL,
+    [userPassword] nvarchar(max)  NOT NULL
 );
 GO
 
@@ -81,15 +72,15 @@ GO
 
 -- Creating foreign key on [UserIdUser] in table 'Journals'
 ALTER TABLE [dbo].[Journals]
-ADD CONSTRAINT [FK_UserJournal]
+ADD CONSTRAINT [FK_UserJournal1]
     FOREIGN KEY ([UserIdUser])
     REFERENCES [dbo].[Users]
         ([IdUser])
     ON DELETE NO ACTION ON UPDATE NO ACTION;
 GO
 
--- Creating non-clustered index for FOREIGN KEY 'FK_UserJournal'
-CREATE INDEX [IX_FK_UserJournal]
+-- Creating non-clustered index for FOREIGN KEY 'FK_UserJournal1'
+CREATE INDEX [IX_FK_UserJournal1]
 ON [dbo].[Journals]
     ([UserIdUser]);
 GO

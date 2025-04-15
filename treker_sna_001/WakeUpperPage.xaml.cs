@@ -34,7 +34,6 @@ namespace treker_sna_001
         public int Minute;
         private DateTime alarmTime;
         private DispatcherTimer timer;
-        private string soundPath = "music1.mp3"; //путь к звуковому файлу
 
         public WakeUpperPage()
         {
@@ -72,15 +71,15 @@ namespace treker_sna_001
             Hour = int.Parse(HourComboBox.SelectedItem.ToString());
             Minute = int.Parse(MinuteComboBox.SelectedItem.ToString());
 
+            //получаем текущее время
             DateTime now = DateTime.Now;
             int hourNow = now.Hour;
             int minuteNow = now.Minute;
 
             TimeSpan timeDifference = CalculateTimeDifference(hourNow, minuteNow, Hour, Minute);
-            MessageBox.Show($"Будильник сработает через {timeDifference.Hours.ToString()} часов {timeDifference.Minutes.ToString()} минут");
             alarm();
-            AlarmDialog alarmDialog = new AlarmDialog();
-            alarmDialog.ShowDialog();
+            MessageBox.Show($"Будильник сработает через {timeDifference.Hours.ToString()} часов {timeDifference.Minutes.ToString()} минут");
+            
         }
 
         private TimeSpan CalculateTimeDifference(int startHour, int startMinute, int endHour, int endMinute)
@@ -107,7 +106,6 @@ namespace treker_sna_001
                 {
                     alarmTime = alarmTime.AddDays(1);
                 }
-                MessageBox.Show($"{alarmTime.ToString("HH.mm")} {alarmTime.ToShortDateString()}");
                 timer.Start();
             }
         }
@@ -124,20 +122,6 @@ namespace treker_sna_001
         {
             AlarmDialog alarmDialog = new AlarmDialog();
             alarmDialog.ShowDialog();
-
-            /*try
-            {
-                MediaPlayer player = new MediaPlayer();
-                player.Open(new Uri (soundPath));
-                alarmDialog.Closed += (s, args) => { player.Stop(); };
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message );
-            }*/
         }
-
-
-
     }
 }

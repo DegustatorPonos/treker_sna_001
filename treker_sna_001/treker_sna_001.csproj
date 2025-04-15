@@ -73,38 +73,24 @@
     <Compile Include="AlarmDialog.xaml.cs">
       <DependentUpon>AlarmDialog.xaml</DependentUpon>
     </Compile>
-    <Compile Include="autorization.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>autorization.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="autorization.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>autorization.tt</DependentUpon>
-    </Compile>
-    <Compile Include="autorization.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>autorization.edmx</DependentUpon>
-    </Compile>
+    <Compile Include="GlobalData.cs" />
     <Compile Include="Journal.cs">
-      <DependentUpon>ModelBD1T.tt</DependentUpon>
+      <DependentUpon>Kurs1.tt</DependentUpon>
     </Compile>
-    <Compile Include="ModelBD1T.Context.cs">
+    <Compile Include="Kurs1.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ModelBD1T.Context.tt</DependentUpon>
+      <DependentUpon>Kurs1.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="ModelBD1T.cs">
+    <Compile Include="Kurs1.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ModelBD1T.tt</DependentUpon>
+      <DependentUpon>Kurs1.tt</DependentUpon>
     </Compile>
-    <Compile Include="ModelBD1T.Designer.cs">
+    <Compile Include="Kurs1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ModelBD1T.edmx</DependentUpon>
+      <DependentUpon>Kurs1.edmx</DependentUpon>
     </Compile>
     <Compile Include="regWindow.xaml.cs">
       <DependentUpon>regWindow.xaml</DependentUpon>
@@ -113,10 +99,7 @@
       <DependentUpon>Test1.xaml</DependentUpon>
     </Compile>
     <Compile Include="User.cs">
-      <DependentUpon>ModelBD1T.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Users.cs">
-      <DependentUpon>autorization.tt</DependentUpon>
+      <DependentUpon>Kurs1.tt</DependentUpon>
     </Compile>
     <Compile Include="WakeUpperPage.xaml.cs">
       <DependentUpon>WakeUpperPage.xaml</DependentUpon>
@@ -191,19 +174,12 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EntityDeploy Include="ModelBD1T.edmx">
+    <EntityDeploy Include="Kurs1.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>ModelBD1T.Designer.cs</LastGenOutput>
+      <LastGenOutput>Kurs1.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <EntityDeploy Include="autorization.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>autorization.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <None Include="autorization.edmx.diagram">
-      <DependentUpon>autorization.edmx</DependentUpon>
-    </None>
-    <None Include="ModelBD1T.edmx.diagram">
-      <DependentUpon>ModelBD1T.edmx</DependentUpon>
+    <None Include="Kurs1.edmx.diagram">
+      <DependentUpon>Kurs1.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -221,28 +197,18 @@
     <Resource Include="user-icon.png" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="autorization.Context.tt">
+    <Content Include="Kurs1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>autorization.edmx</DependentUpon>
-      <LastGenOutput>autorization.Context.cs</LastGenOutput>
+      <LastGenOutput>Kurs1.Context.cs</LastGenOutput>
+      <DependentUpon>Kurs1.edmx</DependentUpon>
     </Content>
-    <Content Include="autorization.tt">
+    <Content Include="Kurs1.edmx.sql" />
+    <Content Include="Kurs1.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>autorization.edmx</DependentUpon>
-      <LastGenOutput>autorization.cs</LastGenOutput>
+      <LastGenOutput>Kurs1.cs</LastGenOutput>
+      <DependentUpon>Kurs1.edmx</DependentUpon>
     </Content>
-    <Content Include="ModelBD1T.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>ModelBD1T.Context.cs</LastGenOutput>
-      <DependentUpon>ModelBD1T.edmx</DependentUpon>
-    </Content>
-    <Content Include="ModelBD1T.edmx.sql" />
-    <Content Include="ModelBD1T.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>ModelBD1T.cs</LastGenOutput>
-      <DependentUpon>ModelBD1T.edmx</DependentUpon>
-    </Content>
-    <Content Include="music1.mp3" />
+    <Content Include="sample.wav" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

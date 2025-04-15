@@ -6,7 +6,9 @@
         xmlns:local="clr-namespace:treker_sna_001"
         mc:Ignorable="d"
         Title="Внесение записи" Height="450" Width="800"
-        Style="{DynamicResource WindowStyle}">
+        Style="{DynamicResource WindowStyle}"
+        AllowsTransparency="True"
+        MouseDown="Window_MouseDown">
     <Border CornerRadius="12">
         <Border Style="{DynamicResource BorderStyle}">
             <StackPanel>

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Media;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,7 +14,6 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using Path = System.IO.Path;
 
 namespace treker_sna_001
 {
@@ -22,52 +22,25 @@ namespace treker_sna_001
     /// </summary>
     public partial class AlarmDialog : Window
     {
-        private MediaPlayer mediaPlayer = new MediaPlayer();
+        private string soundFilePath = "sample.wav";
+        SoundPlayer player;
         public AlarmDialog()
         {
             InitializeComponent();
-            string resourcePath = "C:\\Users\\хорек2\\source\\repos\\treker_sna_001\\treker_sna_001\\music1";
-            Stream resourceStream = Assembly.GetExecutingAssembly().GetManifestResourceStream(resourcePath);
-            if (resourceStream != null)
-            {
-                // Создать временный файл
-                string tempFilePath = Path.GetTempFileName() + ".mp3";
-
-                // Записать поток в файл
-                using (var fileStream = File.Create(tempFilePath))
-                {
-                    resourceStream.CopyTo(fileStream);
-                }
-
-                // Воспроизвести файл
-                mediaPlayer.Open(new Uri(tempFilePath));
-                mediaPlayer.Play();
-
-                // Удалить временный файл после воспроизведения (опционально)
-                mediaPlayer.MediaEnded += (s, args) =>
-                {
-                    try
-                    {
-                        File.Delete(tempFilePath);
-                    }
-                    catch (Exception ex)
-                    {
-                        Console.WriteLine($"Error deleting temporary file: {ex.Message}");
-                    }
-                };
-
-            }
-            else
-            {
-                MessageBox.Show("Resource not found: " + resourcePath);
-            }
+            mess.Text = $"{GlobalData.SharedData}, вставай, на работу пора!";
+            player = new SoundPlayer(soundFilePath);
+            player.PlayLooping();
         }
-
-        
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
+            player.Stop();
+        }
+        private void Window_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if (e.LeftButton == MouseButtonState.Pressed)
+                DragMove();
         }
     }
 }

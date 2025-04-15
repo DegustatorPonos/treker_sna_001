@@ -6,16 +6,19 @@
         xmlns:local="clr-namespace:treker_sna_001"
         mc:Ignorable="d"
         Height="450" Width="800"
-        Style="{DynamicResource WindowStyle}">
+        Style="{DynamicResource WindowStyle}" 
+        AllowsTransparency="True"
+        MouseDown="Window_MouseDown">
     <Border CornerRadius="12">
         <Border Style="{DynamicResource BorderStyle}">
             <StackPanel>
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="30"/>
+                        <RowDefinition Height="15"/>
                         <RowDefinition/>
                     </Grid.RowDefinitions>
-
+                    <Label Name="loginTXT" HorizontalAlignment="Center"/>
                     <Grid Grid.Row="0">
 
                         <Grid.ColumnDefinitions>
@@ -103,9 +106,10 @@
                 </Grid>
                 <Grid>
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition/>
-                        <ColumnDefinition/>
-                        <ColumnDefinition/>
+                        <ColumnDefinition Width="172*"/>
+                        <ColumnDefinition Width="51*"/>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="223*"/>
                     </Grid.ColumnDefinitions>
                     <Grid.RowDefinitions>
                         <RowDefinition MinHeight="50" Height="auto"/>
@@ -113,8 +117,8 @@
                         <RowDefinition/>
                     </Grid.RowDefinitions>
 
-                    <Frame Name="mainFrame" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="3" Grid.RowSpan="2" NavigationUIVisibility="Hidden" Visibility="Hidden"/>
-                    <StackPanel Name="btnStackPanel" Grid.Column="0" Grid.ColumnSpan="3" HorizontalAlignment="Center">
+                    <Frame Name="mainFrame" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="4" Grid.RowSpan="2" NavigationUIVisibility="Hidden" Visibility="Hidden"/>
+                    <StackPanel Name="btnStackPanel" Grid.Column="2" HorizontalAlignment="Center">
 
                         <Button Name="openjournal" Click="openjournal_Click" Style="{DynamicResource mainMenuButtonStyle}">
                             <Button.Content>

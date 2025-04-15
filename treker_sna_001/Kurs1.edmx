@@ -1,0 +1,153 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Kurs1.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="Kurs1StoreContainer">
+    <EntitySet Name="Users" EntityType="Kurs1.Store.Users" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Journals" EntityType="Kurs1.Store.Journals" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="UserJournal1" Association="Kurs1.Store.UserJournal1">
+      <End Role="User" EntitySet="Users" />
+      <End Role="Journal" EntitySet="Journals" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="IdUser" />
+    </Key>
+    <Property Name="IdUser" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="userLogin" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="userPassword" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Journals">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserIdUser" Type="int" Nullable="false" />
+    <Property Name="TypeDream" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Feelings" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="WakeUpCount" Type="int" Nullable="false" />
+    <Property Name="TimeDown" Type="datetime" Nullable="false" />
+    <Property Name="TimeWakeUp" Type="datetime" Nullable="false" />
+    <Property Name="Stress" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Phisical" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Temperature" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <Association Name="UserJournal1">
+    <End Role="User" Type="Kurs1.Store.Users" Multiplicity="1" />
+    <End Role="Journal" Type="Kurs1.Store.Journals" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="IdUser" />
+      </Principal>
+      <Dependent Role="Journal">
+        <PropertyRef Name="UserIdUser" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="Kurs1" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+        <EntityContainer Name="Kurs1Container" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Users" EntityType="Kurs1.User" />
+          <EntitySet Name="Journals" EntityType="Kurs1.Journal" />
+          <AssociationSet Name="UserJournal1" Association="Kurs1.UserJournal1">
+            <End Role="User" EntitySet="Users" />
+            <End Role="Journal" EntitySet="Journals" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="IdUser" />
+          </Key>
+          <Property Name="IdUser" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="userLogin" Type="String" Nullable="false" />
+          <Property Name="userPassword" Type="String" Nullable="false" />
+          <NavigationProperty Name="Journal" Relationship="Kurs1.UserJournal1" FromRole="User" ToRole="Journal" />
+        </EntityType>
+        <EntityType Name="Journal">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserIdUser" Type="Int32" Nullable="false" />
+          <Property Name="TypeDream" Type="String" Nullable="false" />
+          <Property Name="Feelings" Type="String" Nullable="false" />
+          <Property Name="WakeUpCount" Type="Int32" Nullable="false" />
+          <Property Name="TimeDown" Type="DateTime" Nullable="false" />
+          <Property Name="TimeWakeUp" Type="DateTime" Nullable="false" />
+          <Property Name="Stress" Type="String" Nullable="false" />
+          <Property Name="Phisical" Type="String" Nullable="false" />
+          <Property Name="Temperature" Type="String" Nullable="false" />
+          <NavigationProperty Name="User1" Relationship="Kurs1.UserJournal1" FromRole="Journal" ToRole="User" />
+        </EntityType>
+        <Association Name="UserJournal1">
+          <End Type="Kurs1.User" Role="User" Multiplicity="1" />
+          <End Type="Kurs1.Journal" Role="Journal" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="IdUser" />
+            </Principal>
+            <Dependent Role="Journal">
+              <PropertyRef Name="UserIdUser" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Kurs1StoreContainer" CdmEntityContainer="Kurs1Container">
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="IsTypeOf(Kurs1.User)">
+        <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="IdUser" ColumnName="IdUser" />
+          <ScalarProperty Name="userLogin" ColumnName="userLogin" />
+          <ScalarProperty Name="userPassword" ColumnName="userPassword" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Journals">
+      <EntityTypeMapping TypeName="IsTypeOf(Kurs1.Journal)">
+        <MappingFragment StoreEntitySet="Journals">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="UserIdUser" ColumnName="UserIdUser" />
+          <ScalarProperty Name="TypeDream" ColumnName="TypeDream" />
+          <ScalarProperty Name="Feelings" ColumnName="Feelings" />
+          <ScalarProperty Name="WakeUpCount" ColumnName="WakeUpCount" />
+          <ScalarProperty Name="TimeDown" ColumnName="TimeDown" />
+          <ScalarProperty Name="TimeWakeUp" ColumnName="TimeWakeUp" />
+          <ScalarProperty Name="Stress" ColumnName="Stress" />
+          <ScalarProperty Name="Phisical" ColumnName="Phisical" />
+          <ScalarProperty Name="Temperature" ColumnName="Temperature" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping></edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <edmx:Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Нет" />
+        <DesignerProperty Name="UseLegacyProvider" Value="False" />
+      </DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
