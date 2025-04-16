@@ -198,8 +198,8 @@ namespace treker_sna_001
             journal.TypeDream = TypeDream;
             journal.Feelings = Feel;
             journal.WakeUpCount = countup;
-            journal.TimeDown = startTime;
-            journal.TimeWakeUp = endTime;
+            journal.TimeDown = ConvertDate(startTime);
+            journal.TimeWakeUp = ConvertDate(endTime);
             journal.Stress = stres;
             journal.Phisical = phis;
             journal.Temperature = temperature;
@@ -207,6 +207,16 @@ namespace treker_sna_001
             App.db.Journals.Add(journal);
             App.db.SaveChanges();
             Close();
+        }
+
+        /// <summary>
+        /// В дотнете дата по умолчанию стоит 1.1.0001, но mssql понимает только даты с 1.1.1753 (время в программировании это больная тема)
+        /// Этот костыль сделает дату приемлемой
+        /// </summary>
+        private DateTime ConvertDate(DateTime baseDate)
+        {
+            var today = DateTime.Now;
+            return baseDate.AddYears(today.Year - 1).AddMonths(today.Month - 1).AddDays(today.Day - 1);
         }
         
     }
