@@ -48,20 +48,17 @@ namespace treker_sna_001
             string password = txtPass.Password;
             if (login != "" && password != "")
             {
-                using (Kurs1Container db = new Kurs1Container())
-                {
-                    List<User> users = new List<User>();
-                    users = db.Users.ToList();
-                    //logs.ItemsSource = users; //для проверки получения пользователей
-                    foreach (User user in users)
+                List<User> users;
+                users = App.db.Users.ToList();
+                foreach (User user in users)
                     {
                         if (user.userLogin == login)
                         {
                             checkLogin.Text = string.Empty;
-                            MessageBox.Show(user.userPassword);
                             if (user.userPassword == password)
                             {
                                 GlobalData.SharedData = login;
+                                GlobalData.user = user;
                                 MainWindow mainWindow = new MainWindow();
                                 mainWindow.Show();
                                 this.Close();
@@ -71,14 +68,9 @@ namespace treker_sna_001
                                 MessageBox.Show("Неверный пароль!");
                             }
                         }
-                        else if (login != user.userLogin)
-                        {
-                            checkLogin.Text = "Неверный логин";
-                        }
                     }
-                }
             }
-            if (txtUser.Text == "t" && txtPass.Password == "t")
+            /*if (txtUser.Text == "t" && txtPass.Password == "t")
             {
                 GlobalData.SharedData = login;
                 MainWindow mainWindow = new MainWindow();
@@ -86,7 +78,7 @@ namespace treker_sna_001
                 
                 MessageBox.Show(GlobalData.SharedData);
                 this.Close();
-            }
+            }*/
         }
     }
 }

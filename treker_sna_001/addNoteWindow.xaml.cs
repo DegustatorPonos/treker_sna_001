@@ -69,6 +69,7 @@ namespace treker_sna_001
             StartMinuteComboBox.SelectedIndex = 0;
             EndHourComboBox.SelectedIndex = 0;
             EndMinuteComboBox.SelectedIndex = 0;
+            countUp.SelectedIndex = 0;
         }
 
         public int startHour;
@@ -103,18 +104,15 @@ namespace treker_sna_001
             {
                 MessageBox.Show("Нормальное время засыпания");
             }
-            else
-            {
-                MessageBox.Show("[eqyz");
-            }
-            this.Close();
+            stress_Checked();
         }
 
-
+        DateTime startTime;
+        DateTime endTime;
         private TimeSpan CalculateTimeDifference(int startHour, int startMinute, int endHour, int endMinute)
         {
-            DateTime startTime = new DateTime(1, 1, 1, startHour, startMinute, 0);
-            DateTime endTime = new DateTime(1, 1, 1, endHour, endMinute, 0);
+            startTime = new DateTime(1, 1, 1, startHour, startMinute, 0);
+            endTime = new DateTime(1, 1, 1, endHour, endMinute, 0);
 
             // Обрабатываем случай, когда конечное время раньше начального (переход через полночь)
             if (endTime < startTime)
@@ -124,13 +122,92 @@ namespace treker_sna_001
 
             return endTime - startTime;
         }
-
-        private void WriterBDtxt()
+        //тип сна
+        string TypeDream;
+        private void rbP_Checked(object sender, RoutedEventArgs e)
         {
-            using (StreamWriter sw = new StreamWriter("bdtest.txt", true))
-            {
-                sw.WriteLine(res2);
-            }
+            TypeDream = "Поверхностный";
         }
+
+        private void rbG_Checked(object sender, RoutedEventArgs e)
+        {
+            TypeDream = "Глубокий";
+        }
+        //ощущения
+        string Feel;
+        private void rbB_Checked(object sender, RoutedEventArgs e)
+        {
+            Feel = "Бодрость";
+        }
+
+        private void rbR_Checked(object sender, RoutedEventArgs e)
+        {
+            Feel = "Разбитость";
+        }
+        
+
+        //температура в спальне
+        string temperature;
+        private void coldTemperature_Checked(object sender, RoutedEventArgs e)
+        {
+            temperature = "Холод";
+        }
+
+        private void hotTemperature_Checked(object sender, RoutedEventArgs e)
+        {
+            temperature = "Жара";
+        }
+
+        private void normTemperature_Checked(object sender, RoutedEventArgs e)
+        {
+            temperature = "Нормальная";
+        }
+        //Счетчик пробуждений
+        int countup;
+        //внешние факторы
+        string phis;
+        string stres;
+        //ID пользователя
+        int id;
+        private void stress_Checked()
+        {
+            countup = countUp.SelectedIndex;
+            if (stress.IsChecked == true)
+            {
+                stres = "ДА";
+            }
+            else
+            {
+                stres = "НЕТ";
+            }
+            if(phisicalAktivities.IsChecked == true)
+            {
+                phis = "ДА";
+            }
+            else
+            {
+                phis = "НЕТ";
+            }
+            id = GlobalData.user.IdUser;
+            saveDB();
+        }
+        private void saveDB()
+        {
+            Journal journal = new Journal();
+            journal.UserIdUser = id;
+            journal.TypeDream = TypeDream;
+            journal.Feelings = Feel;
+            journal.WakeUpCount = countup;
+            journal.TimeDown = startTime;
+            journal.TimeWakeUp = endTime;
+            journal.Stress = stres;
+            journal.Phisical = phis;
+            journal.Temperature = temperature;
+
+            App.db.Journals.Add(journal);
+            App.db.SaveChanges();
+            Close();
+        }
+        
     }
 }

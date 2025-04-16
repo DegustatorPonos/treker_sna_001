@@ -125,89 +125,89 @@
                 </Grid>
 
                 <StackPanel Width="220"
-                            Grid.Row="1"
-                            Orientation="Vertical"
-                            Margin="0,35,0,0">
+            Grid.Row="1"
+            Orientation="Vertical"
+            Margin="0,35,0,0">
 
 
                     <TextBlock Text="Трекер привычек сна"
-                               TextWrapping="Wrap"
-                               TextAlignment="Center"
-                               Foreground="White"
-                               FontSize="25"
-                               FontWeight="Medium"
-                               FontFamily="Montserrat"
-                               HorizontalAlignment="Center"/>
+               TextWrapping="Wrap"
+               TextAlignment="Center"
+               Foreground="White"
+               FontSize="25"
+               FontWeight="Medium"
+               FontFamily="Montserrat"
+               HorizontalAlignment="Center"/>
 
                     <TextBlock Text="Username"
-                               Foreground="DarkGray"
-                               FontSize="12"
-                               FontWeight="Medium"
-                               FontFamily="Montserrat"                             
-                               Margin="0,35,0,0"/>
+               Foreground="DarkGray"
+               FontSize="12"
+               FontWeight="Medium"
+               FontFamily="Montserrat"                             
+               Margin="0,35,0,0"/>
 
                     <TextBox x:Name="txtUser"
-                             FontSize="13"
-                             FontWeight="Medium"
-                             FontFamily="Montserrat"                            
-                             Foreground="White"
-                             CaretBrush="LightGray"
-                             BorderBrush="DarkGray"
-                             BorderThickness="0,0,0,2"
-                             Height="28"
-                             VerticalContentAlignment="Center"
-                             Margin="0,5,0,0"
-                             Padding="20,0,0,0">
+             FontSize="13"
+             FontWeight="Medium"
+             FontFamily="Montserrat"                            
+             Foreground="White"
+             CaretBrush="LightGray"
+             BorderBrush="DarkGray"
+             BorderThickness="0,0,0,2"
+             Height="28"
+             VerticalContentAlignment="Center"
+             Margin="0,5,0,0"
+             Padding="20,0,0,0">
 
                         <TextBox.Background>
                             <ImageBrush ImageSource="user-icon.png"
-                                        Stretch="None"
-                                        AlignmentX="Left"/>
+                        Stretch="None"
+                        AlignmentX="Left"/>
                         </TextBox.Background>
                     </TextBox>
                     <TextBlock Name="checkLogin" Height="20" Foreground="Red"/>
                     <TextBlock Text="Password"
-                               Foreground="DarkGray"
-                               FontSize="12"
-                               FontWeight="Medium"
-                               FontFamily="Montserrat"                             
-                               Margin="0,5,0,0"/>
+               Foreground="DarkGray"
+               FontSize="12"
+               FontWeight="Medium"
+               FontFamily="Montserrat"                             
+               Margin="0,5,0,0"/>
 
                     <PasswordBox x:Name="txtPass"
-                             FontSize="13"
-                             FontWeight="Medium"
-                             FontFamily="Montserrat"                            
-                             Foreground="White"
-                             CaretBrush="LightGray"
-                             BorderBrush="DarkGray"
-                             BorderThickness="0,0,0,2"
-                             Height="28"
-                             VerticalContentAlignment="Center"
-                             Margin="0,5,0,0"
-                             Padding="20,0,0,0">
+             FontSize="13"
+             FontWeight="Medium"
+             FontFamily="Montserrat"                            
+             Foreground="White"
+             CaretBrush="LightGray"
+             BorderBrush="DarkGray"
+             BorderThickness="0,0,0,2"
+             Height="28"
+             VerticalContentAlignment="Center"
+             Margin="0,5,0,0"
+             Padding="20,0,0,0">
 
                         <PasswordBox.Background>
                             <ImageBrush ImageSource="key-icon.png"
-                                        Stretch="None"
-                                        AlignmentX="Left"/>
+                        Stretch="None"
+                        AlignmentX="Left"/>
                         </PasswordBox.Background>
                     </PasswordBox>
 
                     <CheckBox Name="forgotPass" Content="Запомнить пароль" Foreground="DarkGray"
-                        FontSize="12"
-                        FontWeight="Medium"
-                        FontFamily="Montserrat"                             
-                        Margin="0,15,0,0"/>
+        FontSize="12"
+        FontWeight="Medium"
+        FontFamily="Montserrat"                             
+        Margin="0,15,0,0"/>
 
                     <Button x:Name="btnLogin"                          
-                            BorderThickness="0"
-                            Content="ВОЙТИ"
-                            Foreground="White"
-                            FontSize="12"
-                            FontFamily="Montserrat"
-                            Cursor="Hand"                           
-                            Margin="0,50,0,0"
-                            Click="btnLogin_Click">
+            BorderThickness="0"
+            Content="ВОЙТИ"
+            Foreground="White"
+            FontSize="12"
+            FontFamily="Montserrat"
+            Cursor="Hand"                           
+            Margin="0,50,0,0"
+            Click="btnLogin_Click">
 
                         <Button.Style>
                             <Style TargetType="Button">
@@ -223,37 +223,38 @@
                         <Button.Template>
                             <ControlTemplate TargetType="Button">
                                 <Border Width="150" Height="40"
-                                        CornerRadius="20"
-                                        Background="{TemplateBinding Background}">
+                        CornerRadius="20"
+                        Background="{TemplateBinding Background}">
                                     <ContentPresenter VerticalAlignment="Center"
-                                                      HorizontalAlignment="Center"/>
+                                      HorizontalAlignment="Center"/>
                                 </Border>
                             </ControlTemplate>
                         </Button.Template>
                     </Button>
 
                     <!--<StackPanel Orientation="Horizontal"
-                                HorizontalAlignment="Center"
-                                Margin="0,15,0,0">
+                HorizontalAlignment="Center"
+                Margin="0,15,0,0">
 
-                        <TextBlock Text="Forgot Password?"
-                               Foreground="DarkGray"
-                               FontSize="12"
-                               FontWeight="Medium"
-                               FontFamily="Montserrat"/>
+        <TextBlock Text="Forgot Password?"
+               Foreground="DarkGray"
+               FontSize="12"
+               FontWeight="Medium"
+               FontFamily="Montserrat"/>
 
-                        <TextBlock Text="Reset"
-                               Foreground="White"
-                               FontSize="12"
-                               FontWeight="Medium"
-                               FontFamily="Montserrat"
-                               Cursor="Hand"
-                               Margin="8,0,0,0"/>
+        <TextBlock Text="Reset"
+               Foreground="White"
+               FontSize="12"
+               FontWeight="Medium"
+               FontFamily="Montserrat"
+               Cursor="Hand"
+               Margin="8,0,0,0"/>
 
-                    </StackPanel>-->
+    </StackPanel>-->
 
-                    <ListBox Name="logs" DisplayMemberPath="userLogin"/>
+
                 </StackPanel>
+
 
             </Grid>
 

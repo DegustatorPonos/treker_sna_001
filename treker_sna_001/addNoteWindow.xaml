@@ -112,19 +112,20 @@ Click="btnClose_Click">
                     <StackPanel Grid.Row="1">
                         <StackPanel>
                             <TextBlock Text="Тип сна"/>
-                            <RadioButton Content="Поверхностный"/>
-                            <RadioButton Content="Глубокий"/>
+                            <RadioButton Content="Поверхностный" Name="rbP" Checked="rbP_Checked"/>
+                            <RadioButton Content="Глубокий" Name="rbG" Checked="rbG_Checked"/>
                         </StackPanel>
                         <StackPanel>
                             <TextBlock Text="Ощущения после пробуждения"/>
-                            <RadioButton Content="Бодрость и свежесть"/>
-                            <RadioButton Content="Разбитость и усталость"/>
+                            <RadioButton Content="Бодрость и свежесть" Name="rbB" Checked="rbB_Checked"/>
+                            <RadioButton Content="Разбитость и усталость" Name="rbR" Checked="rbR_Checked"/>
                         </StackPanel>
                         <TextBlock Text="Количество пробуждений"/>
                         <ComboBox Name="countUp" Width="40" HorizontalAlignment="Left"/>
                         <StackPanel>
-                            <RadioButton Content="Низкая температура в спальне" Name="coldTemperature"/>
-                            <RadioButton Content="Высокая температура в спальне" Name="hotTemperature"/>
+                            <RadioButton Content="Низкая температура в спальне" Name="coldTemperature" Checked="coldTemperature_Checked"/>
+                            <RadioButton Content="Нормальная температура в спальне" Name="normTemperature" Checked="normTemperature_Checked"/>
+                            <RadioButton Content="Высокая температура в спальне" Name="hotTemperature" Checked="hotTemperature_Checked"/>
                         </StackPanel>
                         <StackPanel>
                             <TextBlock Text="Выберите внешние факторы, с которыми пришлось столкнуться перед сном"/>

@@ -9,5 +9,6 @@ namespace treker_sna_001
     public static class GlobalData
     {
         public static string SharedData { get; set; }
+        public static User user { get; set; }
     }
 }

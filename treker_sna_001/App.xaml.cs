@@ -13,5 +13,6 @@ namespace treker_sna_001
     /// </summary>
     public partial class App : Application
     {
+        public static Kurs1Container db = new Kurs1Container();
     }
 }
