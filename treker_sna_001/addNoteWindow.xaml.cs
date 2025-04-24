@@ -100,10 +100,10 @@ namespace treker_sna_001
                 ResultLabel.Content = $"Ошибка: {ex.Message}";
             }
 
-            if (startHour > 19 || startHour < 2)
+            /*if (startHour > 19 || startHour < 2)
             {
                 MessageBox.Show("Нормальное время засыпания");
-            }
+            }*/
             stress_Checked();
         }
 
@@ -111,13 +111,13 @@ namespace treker_sna_001
         DateTime endTime;
         private TimeSpan CalculateTimeDifference(int startHour, int startMinute, int endHour, int endMinute)
         {
-            startTime = new DateTime(1, 1, 1, startHour, startMinute, 0);
-            endTime = new DateTime(1, 1, 1, endHour, endMinute, 0);
+            startTime = new DateTime(2, 2, 2, startHour, startMinute, 0);
+            endTime = new DateTime(2, 2, 2, endHour, endMinute, 0);
 
             // Обрабатываем случай, когда конечное время раньше начального (переход через полночь)
             if (endTime < startTime)
             {
-                endTime = endTime.AddDays(1);  // Предполагаем, что конечное время на следующий день
+                startTime = startTime.AddDays(-1);  // Предполагаем, что запись вносится в день пробуждения
             }
 
             return endTime - startTime;
@@ -193,20 +193,25 @@ namespace treker_sna_001
         }
         private void saveDB()
         {
-            Journal journal = new Journal();
-            journal.UserIdUser = id;
-            journal.TypeDream = TypeDream;
-            journal.Feelings = Feel;
-            journal.WakeUpCount = countup;
-            journal.TimeDown = ConvertDate(startTime);
-            journal.TimeWakeUp = ConvertDate(endTime);
-            journal.Stress = stres;
-            journal.Phisical = phis;
-            journal.Temperature = temperature;
+            if (TypeDream != null && Feel != null && temperature != null && phis != null && stres != null)
+            {
+                Journal journal = new Journal();
+                journal.UserIdUser = id;
+                journal.TypeDream = TypeDream;
+                journal.Feelings = Feel;
+                journal.WakeUpCount = countup;
+                journal.TimeDown = ConvertDate(startTime);
+                journal.TimeWakeUp = ConvertDate(endTime);
+                journal.Stress = stres;
+                journal.Phisical = phis;
+                journal.Temperature = temperature;
 
-            App.db.Journals.Add(journal);
-            App.db.SaveChanges();
-            Close();
+                App.db.Journals.Add(journal);
+                App.db.SaveChanges();
+                DialogResult = true;
+                Close();
+            }
+            else MessageBox.Show("Выберите значения всех пунктов");
         }
 
         /// <summary>
@@ -216,7 +221,7 @@ namespace treker_sna_001
         private DateTime ConvertDate(DateTime baseDate)
         {
             var today = DateTime.Now;
-            return baseDate.AddYears(today.Year - 1).AddMonths(today.Month - 1).AddDays(today.Day - 1);
+            return baseDate.AddYears(today.Year - 2).AddMonths(today.Month - 2).AddDays(today.Day - 2);
         }
         
     }

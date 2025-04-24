@@ -20,21 +20,54 @@ namespace treker_sna_001
     /// </summary>
     public partial class journalPage : Page
     {
+        public int userID = GlobalData.user.IdUser;
         public journalPage()
         {
             InitializeComponent();
+            LoadNotes();
         }
 
         private void addnote_Click(object sender, RoutedEventArgs e)
         {
             addNoteWindow add = new addNoteWindow();
-            add.ShowDialog();
+            if(add.ShowDialog() == true)
+            {
+                LoadNotes();
+            }
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void LoadNotes()
         {
-
+            notes.ItemsSource = App.db.Journals.Where(j => j.UserIdUser == userID).ToList();
         }
-        
+
+        private void delnote_Click(object sender, RoutedEventArgs e)
+        {
+            if (notes.SelectedItem == null)
+            {
+                MessageBox.Show("Выберите запись!");
+                return;
+            }
+            Journal journal = notes.SelectedItem as Journal;
+            App.db.Journals.Remove(journal);
+            App.db.SaveChanges();
+            MessageBox.Show("Данные удалены");
+            LoadNotes();
+        }
+
+        private void clear_Click(object sender, RoutedEventArgs e)
+        {
+            Journal journal = new Journal();
+            if(MessageBox.Show("Очистить?", "Подтверждение", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
+            {
+                List<Journal> list = App.db.Journals.Where(j => j.UserIdUser == userID).ToList();
+                foreach(Journal journal1 in list)
+                {
+                    App.db.Journals.Remove(journal1);
+                }
+                App.db.SaveChanges();
+                LoadNotes();
+            }
+        }
     }
 }

@@ -24,7 +24,6 @@ namespace treker_sna_001
         {
             InitializeComponent();
             loginTXT.Content = GlobalData.SharedData;
-            MessageBox.Show(GlobalData.SharedData);
         }
 
         private void openjournal_Click(object sender, RoutedEventArgs e)

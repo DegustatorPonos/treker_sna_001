@@ -28,8 +28,6 @@ C:\Users\хорек2\source\repos\treker_sna_001\treker_sna_001\obj\Debug\treker
 C:\Users\хорек2\source\repos\treker_sna_001\treker_sna_001\obj\Debug\openFrameStyleMainWin.baml
 C:\Users\хорек2\source\repos\treker_sna_001\treker_sna_001\obj\Debug\startStyleMainWin.baml
 C:\Users\хорек2\source\repos\treker_sna_001\treker_sna_001\obj\Debug\App.baml
-C:\Users\хорек2\source\repos\treker_sna_001\treker_sna_001\obj\Debug\regWindow.g.cs
-C:\Users\хорек2\source\repos\treker_sna_001\treker_sna_001\obj\Debug\regWindow.baml
 C:\Users\stud7korp2\Desktop\treker_sna_001-main\treker_sna_001\bin\Debug\treker_sna_001.exe.config
 C:\Users\stud7korp2\Desktop\treker_sna_001-main\treker_sna_001\bin\Debug\treker_sna_001.exe
 C:\Users\stud7korp2\Desktop\treker_sna_001-main\treker_sna_001\bin\Debug\treker_sna_001.pdb
@@ -72,3 +70,5 @@ C:\Users\stud7korp2\Desktop\treker_sna_001-main\treker_sna_001\obj\Debug\AlarmDi
 C:\Users\stud7korp2\Desktop\treker_sna_001-main\treker_sna_001\obj\Debug\AlarmDialog.baml
 C:\Users\хорек2\source\repos\treker_sna_001\treker_sna_001\obj\Debug\AlarmDialog.g.cs
 C:\Users\хорек2\source\repos\treker_sna_001\treker_sna_001\obj\Debug\AlarmDialog.baml
+C:\Users\хорек2\source\repos\treker_sna_001\treker_sna_001\obj\Debug\regWindow.g.cs
+C:\Users\хорек2\source\repos\treker_sna_001\treker_sna_001\obj\Debug\regWindow.baml

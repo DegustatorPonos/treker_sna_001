@@ -19,7 +19,6 @@ namespace treker_sna_001
     /// </summary>
     public partial class regWindow : Window
     {
-        public string login;
         public regWindow()
         {
             InitializeComponent();
@@ -43,42 +42,27 @@ namespace treker_sna_001
 
         private void btnLogin_Click(object sender, RoutedEventArgs e)
         {
-            
-            login = txtUser.Text;
+
+            string login = txtUser.Text;
             string password = txtPass.Password;
-            if (login != "" && password != "")
+
+            User user = App.db.Users.FirstOrDefault(us => us.userLogin == login && us.userPassword == password);
+            if (user == null)
             {
-                List<User> users;
-                users = App.db.Users.ToList();
-                foreach (User user in users)
-                    {
-                        if (user.userLogin == login)
-                        {
-                            checkLogin.Text = string.Empty;
-                            if (user.userPassword == password)
-                            {
-                                GlobalData.SharedData = login;
-                                GlobalData.user = user;
-                                MainWindow mainWindow = new MainWindow();
-                                mainWindow.Show();
-                                this.Close();
-                            }
-                            else
-                            {
-                                MessageBox.Show("Неверный пароль!");
-                            }
-                        }
-                    }
+                // Выдаём ошибку
+                MessageBox.Show("Пользователь не найден!");
             }
-            /*if (txtUser.Text == "t" && txtPass.Password == "t")
+            // Если сотрудник найден
+            else
             {
-                GlobalData.SharedData = login;
-                MainWindow mainWindow = new MainWindow();
-                mainWindow.Show();
-                
-                MessageBox.Show(GlobalData.SharedData);
-                this.Close();
-            }*/
+                //запоминаем пользователя
+                GlobalData.user = user;
+                // Открываем главное окно
+                MainWindow window = new MainWindow();
+                window.Show();
+                // Закрываем текущее окно с авторизацией
+                Close();
+            }
         }
     }
 }

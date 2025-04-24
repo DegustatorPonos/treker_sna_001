@@ -12,9 +12,37 @@
         <StackPanel>
             <StackPanel Orientation="Horizontal">
                 <Button Content="Добавить запись" Name="addnote" Click="addnote_Click"/>
-                <Button Content="Удалить запись"/>
-                <Button Content="Очистить журнал"/>
+                <Button Content="Удалить запись" Name="delnote" Click="delnote_Click"/>
+                <Button Content="Очистить журнал" Name="clear" Click="clear_Click"/>
             </StackPanel>
+            <ListBox Name="notes">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="30"/>
+                                <ColumnDefinition Width="95"/>
+                                <ColumnDefinition Width="65"/>
+                                <ColumnDefinition Width="10"/>
+                                <ColumnDefinition Width="130"/>
+                                <ColumnDefinition Width="130"/>
+                                <ColumnDefinition Width="30"/>
+                                <ColumnDefinition Width="30"/>
+                                <ColumnDefinition Width="auto"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Grid.Column="0" Text="{Binding Id}"/>
+                            <TextBlock Grid.Column="1" Text="{Binding TypeDream}"/>
+                            <TextBlock Grid.Column="2" Text="{Binding Feelings}"/>
+                            <TextBlock Grid.Column="3" Text="{Binding WakeUpCount}"/>
+                            <TextBlock Grid.Column="4" Text="{Binding TimeDown}"/>
+                            <TextBlock Grid.Column="5" Text="{Binding TimeWakeUp}"/>
+                            <TextBlock Grid.Column="6" Text="{Binding Stress}"/>
+                            <TextBlock Grid.Column="7" Text="{Binding Phisical}"/>
+                            <TextBlock Grid.Column="8" Text="{Binding Temperature}"/>
+                        </Grid>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
         </StackPanel>
     </Grid>
 </Page>
