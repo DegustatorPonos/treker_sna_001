@@ -27,7 +27,7 @@ namespace treker_sna_001
         public AlarmDialog()
         {
             InitializeComponent();
-            mess.Text = $"{GlobalData.SharedData}, вставай, на работу пора!";
+            mess.Text = $"{GlobalData.user.userLogin.ToString()}, вставай, на работу пора!";
             player = new SoundPlayer(soundFilePath);
             player.PlayLooping();
         }

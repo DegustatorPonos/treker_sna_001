@@ -20,6 +20,7 @@
                     <ComboBox x:Name="MinuteComboBox" Width="50"/>
                 </StackPanel>
                 <Button Content="Установить" Name="Set" Click="Set_Click"/>
+                <ListBox Name="alarmListBox"/>
             </StackPanel>
         </StackPanel>
     </Grid>

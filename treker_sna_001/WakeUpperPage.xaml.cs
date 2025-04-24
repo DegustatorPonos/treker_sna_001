@@ -30,18 +30,18 @@ namespace treker_sna_001
             "другое"
         };
 
-        public int Hour;
-        public int Minute;
-        private DateTime alarmTime;
+        private List<DateTime> alarms = new List<DateTime>();
         private DispatcherTimer timer;
 
         public WakeUpperPage()
         {
             InitializeComponent();
             InitializeComboBoxes();
+
             timer = new DispatcherTimer();
-            timer.Interval = TimeSpan.FromSeconds(1);
+            timer.Interval = TimeSpan.FromSeconds(1); // Проверка каждую секунду
             timer.Tick += Timer_Tick;
+            timer.Start();
         }
 
         private void InitializeComboBoxes()
@@ -67,55 +67,40 @@ namespace treker_sna_001
 
         private void Set_Click(object sender, RoutedEventArgs e)
         {
-            // Получаем выбранные значения из списков
-            Hour = int.Parse(HourComboBox.SelectedItem.ToString());
-            Minute = int.Parse(MinuteComboBox.SelectedItem.ToString());
-
-            //получаем текущее время
-            DateTime now = DateTime.Now;
-            int hourNow = now.Hour;
-            int minuteNow = now.Minute;
-
-            TimeSpan timeDifference = CalculateTimeDifference(hourNow, minuteNow, Hour, Minute);
-            alarm();
-            MessageBox.Show($"Будильник сработает через {timeDifference.Hours.ToString()} часов {timeDifference.Minutes.ToString()} минут");
-            
-        }
-
-        private TimeSpan CalculateTimeDifference(int startHour, int startMinute, int endHour, int endMinute)
-        {
-            DateTime startTime = new DateTime(1, 1, 1, startHour, startMinute, 0);
-            DateTime endTime = new DateTime(1, 1, 1, endHour, endMinute, 0);
-
-            // Обрабатываем случай, когда конечное время раньше начального (переход через полночь)
-            if (endTime < startTime)
+            if (HourComboBox.SelectedItem != null && MinuteComboBox.SelectedItem != null)
             {
-                endTime = endTime.AddDays(1);  // Предполагаем, что конечное время на следующий день
-            }
+                int hour = int.Parse(HourComboBox.SelectedItem.ToString());
+                int minute = int.Parse(MinuteComboBox.SelectedItem.ToString());
 
-            return endTime - startTime;
-        }
-        private void alarm()
-        {
-            string HHmm = $"{Hour}:{Minute}";
-            if (DateTime.TryParseExact(HHmm, "HH:mm", null, System.Globalization.DateTimeStyles.None, out DateTime parsedTime))
-            {
-                DateTime today = DateTime.Today;
-                alarmTime = new DateTime(today.Year, today.Month, today.Day, parsedTime.Hour, parsedTime.Minute, 0);
+                DateTime alarmTime = DateTime.Now.Date.AddHours(hour).AddMinutes(minute);
                 if (alarmTime <= DateTime.Now)
                 {
-                    alarmTime = alarmTime.AddDays(1);
+                    alarmTime = alarmTime.AddDays(1); // Переносим на завтра, если время уже прошло сегодня
                 }
-                timer.Start();
+
+                alarms.Add(alarmTime);
+                alarmListBox.Items.Add(alarmTime.ToString("HH:mm dd.MM.yyyy"));
+                //UpdateStatus("Будильник установлен на " + alarmTime.ToString("HH:mm dd.MM.yyyy"));
+            }
+            else
+            {
+                MessageBox.Show("Пожалуйста, выберите час и минуту.");
             }
         }
 
         private void Timer_Tick(object sender, EventArgs e)
         {
-            if (DateTime.Now >= alarmTime)
+            DateTime now = DateTime.Now;
+
+            for (int i = alarms.Count - 1; i >= 0; i--) // Итерируем с конца, чтобы безопасно удалять элементы
             {
-                timer.Stop();
-                showAlarmDialog();
+                if (now >= alarms[i])
+                {
+                    showAlarmDialog();
+                    alarms.RemoveAt(i);
+                    alarmListBox.Items.RemoveAt(i);
+                    //UpdateStatus("Будильник сработал и удален.");
+                }
             }
         }
         private void showAlarmDialog()

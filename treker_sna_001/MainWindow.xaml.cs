@@ -23,7 +23,7 @@ namespace treker_sna_001
         public MainWindow()
         {
             InitializeComponent();
-            loginTXT.Content = GlobalData.SharedData;
+            loginTXT.Content = GlobalData.user.userLogin.ToString();
         }
 
         private void openjournal_Click(object sender, RoutedEventArgs e)
