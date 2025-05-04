@@ -24,10 +24,11 @@ namespace treker_sna_001
     {
         private string soundFilePath = "sample.wav";
         SoundPlayer player;
-        public AlarmDialog()
+        public AlarmDialog(WakeUpper wakeUpper)
         {
             InitializeComponent();
-            mess.Text = $"{GlobalData.user.userLogin.ToString()}, вставай, на работу пора!";
+            string text = App.db.Users.Find(wakeUpper.UserIdUser).userLogin;
+            mess.Text = $"{text}, вставай, на работу пора!";
             player = new SoundPlayer(soundFilePath);
             player.PlayLooping();
         }

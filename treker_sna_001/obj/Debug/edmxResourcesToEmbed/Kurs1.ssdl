@@ -3,9 +3,14 @@
   <EntityContainer Name="Kurs1StoreContainer">
     <EntitySet Name="Users" EntityType="Kurs1.Store.Users" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Journals" EntityType="Kurs1.Store.Journals" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="WakeUpper" EntityType="Kurs1.Store.WakeUpper" store:Type="Tables" Schema="dbo" />
     <AssociationSet Name="UserJournal1" Association="Kurs1.Store.UserJournal1">
       <End Role="User" EntitySet="Users" />
       <End Role="Journal" EntitySet="Journals" />
+    </AssociationSet>
+    <AssociationSet Name="UserWakeUpper" Association="Kurs1.Store.UserWakeUpper">
+      <End Role="User" EntitySet="Users" />
+      <End Role="WakeUpper" EntitySet="WakeUpper" />
     </AssociationSet>
   </EntityContainer>
   <EntityType Name="Users">
@@ -31,6 +36,15 @@
     <Property Name="Phisical" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Temperature" Type="nvarchar(max)" Nullable="false" />
   </EntityType>
+  <EntityType Name="WakeUpper">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserIdUser" Type="int" Nullable="false" />
+    <Property Name="dateTime" Type="datetime" Nullable="false" />
+    <Property Name="Occasion" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
   <Association Name="UserJournal1">
     <End Role="User" Type="Kurs1.Store.Users" Multiplicity="1" />
     <End Role="Journal" Type="Kurs1.Store.Journals" Multiplicity="*" />
@@ -39,6 +53,18 @@
         <PropertyRef Name="IdUser" />
       </Principal>
       <Dependent Role="Journal">
+        <PropertyRef Name="UserIdUser" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="UserWakeUpper">
+    <End Role="User" Type="Kurs1.Store.Users" Multiplicity="1" />
+    <End Role="WakeUpper" Type="Kurs1.Store.WakeUpper" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="IdUser" />
+      </Principal>
+      <Dependent Role="WakeUpper">
         <PropertyRef Name="UserIdUser" />
       </Dependent>
     </ReferentialConstraint>

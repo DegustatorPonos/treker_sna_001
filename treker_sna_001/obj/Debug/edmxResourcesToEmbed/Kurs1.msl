@@ -26,5 +26,15 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="WakeUpper">
+      <EntityTypeMapping TypeName="IsTypeOf(Kurs1.WakeUpper)">
+        <MappingFragment StoreEntitySet="WakeUpper">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="UserIdUser" ColumnName="UserIdUser" />
+          <ScalarProperty Name="dateTime" ColumnName="dateTime" />
+          <ScalarProperty Name="Occasion" ColumnName="Occasion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

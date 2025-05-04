@@ -74,6 +74,9 @@
       <DependentUpon>AlarmDialog.xaml</DependentUpon>
     </Compile>
     <Compile Include="GlobalData.cs" />
+    <Compile Include="HabitPage.xaml.cs">
+      <DependentUpon>HabitPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Journal.cs">
       <DependentUpon>Kurs1.tt</DependentUpon>
     </Compile>
@@ -101,6 +104,9 @@
     <Compile Include="User.cs">
       <DependentUpon>Kurs1.tt</DependentUpon>
     </Compile>
+    <Compile Include="WakeUpper.cs">
+      <DependentUpon>Kurs1.tt</DependentUpon>
+    </Compile>
     <Compile Include="WakeUpperPage.xaml.cs">
       <DependentUpon>WakeUpperPage.xaml</DependentUpon>
     </Compile>
@@ -113,6 +119,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Dictionary1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="HabitPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

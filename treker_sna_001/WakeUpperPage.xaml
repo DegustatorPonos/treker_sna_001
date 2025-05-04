@@ -12,15 +12,33 @@
     <Grid>
         <StackPanel>
             <StackPanel>
-                <StackPanel Orientation="Horizontal">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Cursor="">
                     <TextBlock Text="Установить напоминание для: "/>
                     <ComboBox Name="napomainanie" Width="100"/>
                     <TextBlock Text=" в "/>
                     <ComboBox x:Name="HourComboBox" Width="50"/>
                     <ComboBox x:Name="MinuteComboBox" Width="50"/>
                 </StackPanel>
-                <Button Content="Установить" Name="Set" Click="Set_Click"/>
-                <ListBox Name="alarmListBox"/>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <Button Content="Установить" Name="Set" Click="Set_Click"/>
+                    <Button Content="Удалить" />
+                </StackPanel>
+                <ListBox Name="alarmListBox">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Text="{Binding Id}" Margin="0,0,5,0"/>
+                                <TextBlock Text="{Binding dateTime}" Grid.Column="1" Margin="0,0,5,0"/>
+                                <TextBlock Text="{Binding Occasion}" Grid.Column="2"/>
+                            </Grid>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
             </StackPanel>
         </StackPanel>
     </Grid>

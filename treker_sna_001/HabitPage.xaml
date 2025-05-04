@@ -1,0 +1,39 @@
+﻿<Page x:Class="treker_sna_001.HabitPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:treker_sna_001"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="HabitPage"
+      Style="{DynamicResource pageStyle}">
+
+    <Grid>
+        <StackPanel>
+            <!--<ListBox Name="alarmListBox">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Text="{Binding Id}" Margin="0,0,5,0"/>
+                            <TextBlock Text="{Binding dateTime}" Grid.Column="1" Margin="0,0,5,0"/>
+                            <TextBlock Text="{Binding Occasion}" Grid.Column="2"/>
+                        </Grid>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>-->
+            <TextBlock Name="txt1"/>
+            <TextBlock Name="txt2"/>
+            <TextBlock Name="txt3"/>
+            <TextBlock Name="txt4"/>
+            <TextBlock Name="txt5"/>
+            <TextBlock Name="txt6"/>
+            <TextBlock Name="txt7"/>
+        </StackPanel>
+    </Grid>
+</Page>

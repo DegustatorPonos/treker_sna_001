@@ -7,14 +7,19 @@
       <End Role="User" EntitySet="Users" />
       <End Role="Journal" EntitySet="Journals" />
     </AssociationSet>
+    <EntitySet Name="WakeUpper" EntityType="Kurs1.WakeUpper" />
+    <AssociationSet Name="UserWakeUpper" Association="Kurs1.UserWakeUpper">
+      <End Role="User" EntitySet="Users" />
+      <End Role="WakeUpper" EntitySet="WakeUpper" />
+    </AssociationSet>
   </EntityContainer>
   <EntityType Name="User">
     <Key>
       <PropertyRef Name="IdUser" />
     </Key>
     <Property Name="IdUser" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="userLogin" Type="String" Nullable="false" />
-    <Property Name="userPassword" Type="String" Nullable="false" />
+    <Property Name="userLogin" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="userPassword" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
     <NavigationProperty Name="Journal" Relationship="Kurs1.UserJournal1" FromRole="User" ToRole="Journal" />
   </EntityType>
   <EntityType Name="Journal">
@@ -23,14 +28,14 @@
     </Key>
     <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="UserIdUser" Type="Int32" Nullable="false" />
-    <Property Name="TypeDream" Type="String" Nullable="false" />
-    <Property Name="Feelings" Type="String" Nullable="false" />
+    <Property Name="TypeDream" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Feelings" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
     <Property Name="WakeUpCount" Type="Int32" Nullable="false" />
-    <Property Name="TimeDown" Type="DateTime" Nullable="false" />
-    <Property Name="TimeWakeUp" Type="DateTime" Nullable="false" />
-    <Property Name="Stress" Type="String" Nullable="false" />
-    <Property Name="Phisical" Type="String" Nullable="false" />
-    <Property Name="Temperature" Type="String" Nullable="false" />
+    <Property Name="TimeDown" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="TimeWakeUp" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Stress" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Phisical" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Temperature" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
     <NavigationProperty Name="User1" Relationship="Kurs1.UserJournal1" FromRole="Journal" ToRole="User" />
   </EntityType>
   <Association Name="UserJournal1">
@@ -41,6 +46,28 @@
         <PropertyRef Name="IdUser" />
       </Principal>
       <Dependent Role="Journal">
+        <PropertyRef Name="UserIdUser" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="WakeUpper">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <NavigationProperty Name="idUser" Relationship="Kurs1.UserWakeUpper" FromRole="WakeUpper" ToRole="User" />
+    <Property Name="UserIdUser" Type="Int32" Nullable="false" />
+    <Property Name="dateTime" Type="DateTime" Nullable="false" />
+    <Property Name="Occasion" Type="String" Nullable="false" />
+  </EntityType>
+  <Association Name="UserWakeUpper">
+    <End Type="Kurs1.User" Role="User" Multiplicity="1" />
+    <End Type="Kurs1.WakeUpper" Role="WakeUpper" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="IdUser" />
+      </Principal>
+      <Dependent Role="WakeUpper">
         <PropertyRef Name="UserIdUser" />
       </Dependent>
     </ReferentialConstraint>

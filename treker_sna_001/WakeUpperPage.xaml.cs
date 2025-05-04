@@ -29,19 +29,15 @@ namespace treker_sna_001
             "засыпания",
             "другое"
         };
-
-        private List<DateTime> alarms = new List<DateTime>();
-        private DispatcherTimer timer;
+       
 
         public WakeUpperPage()
         {
             InitializeComponent();
             InitializeComboBoxes();
 
-            timer = new DispatcherTimer();
-            timer.Interval = TimeSpan.FromSeconds(1); // Проверка каждую секунду
-            timer.Tick += Timer_Tick;
-            timer.Start();
+            
+            LoadWakeUpper();
         }
 
         private void InitializeComboBoxes()
@@ -63,6 +59,12 @@ namespace treker_sna_001
             // Устанавливаем значения по умолчанию
             HourComboBox.SelectedIndex = 0;
             MinuteComboBox.SelectedIndex = 0;
+            napomainanie.SelectedIndex = 0;
+        }
+
+        public void LoadWakeUpper()
+        {
+            alarmListBox.ItemsSource = App.db.WakeUpper.ToList();
         }
 
         private void Set_Click(object sender, RoutedEventArgs e)
@@ -78,35 +80,24 @@ namespace treker_sna_001
                     alarmTime = alarmTime.AddDays(1); // Переносим на завтра, если время уже прошло сегодня
                 }
 
-                alarms.Add(alarmTime);
-                alarmListBox.Items.Add(alarmTime.ToString("HH:mm dd.MM.yyyy"));
-                //UpdateStatus("Будильник установлен на " + alarmTime.ToString("HH:mm dd.MM.yyyy"));
+                // создание будильника и запись его в БД
+                string nap = napomainanie.SelectedItem.ToString();
+                WakeUpper wakeUpper = new WakeUpper()
+                {
+                    UserIdUser = GlobalData.user.IdUser,
+                    dateTime = alarmTime,
+                    Occasion = nap
+                };
+
+                App.db.WakeUpper.Add(wakeUpper);
+                App.db.SaveChanges();
+
+                LoadWakeUpper();
             }
             else
             {
                 MessageBox.Show("Пожалуйста, выберите час и минуту.");
             }
-        }
-
-        private void Timer_Tick(object sender, EventArgs e)
-        {
-            DateTime now = DateTime.Now;
-
-            for (int i = alarms.Count - 1; i >= 0; i--) // Итерируем с конца, чтобы безопасно удалять элементы
-            {
-                if (now >= alarms[i])
-                {
-                    showAlarmDialog();
-                    alarms.RemoveAt(i);
-                    alarmListBox.Items.RemoveAt(i);
-                    //UpdateStatus("Будильник сработал и удален.");
-                }
-            }
-        }
-        private void showAlarmDialog()
-        {
-            AlarmDialog alarmDialog = new AlarmDialog();
-            alarmDialog.ShowDialog();
         }
     }
 }

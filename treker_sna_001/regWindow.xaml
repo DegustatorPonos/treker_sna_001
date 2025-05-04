@@ -48,7 +48,7 @@
                         <ColumnDefinition Width="5"/>
                     </Grid.ColumnDefinitions>
 
-                    <TextBlock Text="ВХОД"
+                    <TextBlock Text="ВХОД/РЕГИСТРАЦИЯ"
                                Foreground="DarkGray"
                                FontSize="10"
                                FontFamily="Montserrat"
@@ -139,7 +139,7 @@
                FontFamily="Montserrat"
                HorizontalAlignment="Center"/>
 
-                    <TextBlock Text="Username"
+                    <TextBlock Text="Логин"
                Foreground="DarkGray"
                FontSize="12"
                FontWeight="Medium"
@@ -165,8 +165,7 @@
                         AlignmentX="Left"/>
                         </TextBox.Background>
                     </TextBox>
-                    <TextBlock Name="checkLogin" Height="20" Foreground="Red"/>
-                    <TextBlock Text="Password"
+                    <TextBlock Text="Пароль"
                Foreground="DarkGray"
                FontSize="12"
                FontWeight="Medium"
@@ -192,12 +191,6 @@
                         AlignmentX="Left"/>
                         </PasswordBox.Background>
                     </PasswordBox>
-
-                    <CheckBox Name="forgotPass" Content="Запомнить пароль" Foreground="DarkGray"
-        FontSize="12"
-        FontWeight="Medium"
-        FontFamily="Montserrat"                             
-        Margin="0,15,0,0"/>
 
                     <Button x:Name="btnLogin"                          
             BorderThickness="0"
@@ -232,25 +225,38 @@
                         </Button.Template>
                     </Button>
 
-                    <!--<StackPanel Orientation="Horizontal"
-                HorizontalAlignment="Center"
-                Margin="0,15,0,0">
+                    <Button x:Name="btnReg"                          
+BorderThickness="0"
+Content="ЗАРЕГИСТРИРОВАТЬСЯ"
+Foreground="White"
+FontSize="12"
+FontFamily="Montserrat"
+Cursor="Hand"                           
+Margin="0,10,0,0"
+Click="btnReg_Click">
 
-        <TextBlock Text="Forgot Password?"
-               Foreground="DarkGray"
-               FontSize="12"
-               FontWeight="Medium"
-               FontFamily="Montserrat"/>
+                        <Button.Style>
+                            <Style TargetType="Button">
+                                <Setter Property="Background" Value="#462AD8"/>
+                                <Style.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Background" Value="#28AEED"/>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Button.Style>
 
-        <TextBlock Text="Reset"
-               Foreground="White"
-               FontSize="12"
-               FontWeight="Medium"
-               FontFamily="Montserrat"
-               Cursor="Hand"
-               Margin="8,0,0,0"/>
-
-    </StackPanel>-->
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Border Width="150" Height="40"
+            CornerRadius="20"
+            Background="{TemplateBinding Background}">
+                                    <ContentPresenter VerticalAlignment="Center"
+                          HorizontalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
 
 
                 </StackPanel>

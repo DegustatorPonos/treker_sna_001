@@ -132,7 +132,7 @@
                         </Button>
                         <Button Name="openhabit" Click="openhabit_Click" Style="{DynamicResource mainMenuButtonStyle}">
                             <Button.Content>
-                                <TextBlock Text="Открыть меню привычек" TextWrapping="Wrap" TextAlignment="Center"/>
+                                <TextBlock Text="Посмотреть статистику" TextWrapping="Wrap" TextAlignment="Center"/>
                             </Button.Content>
                         </Button>
                     </StackPanel>

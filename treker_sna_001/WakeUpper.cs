@@ -15,29 +15,20 @@ namespace treker_sna_001
 using System;
     using System.Collections.Generic;
     
-public partial class User
+public partial class WakeUpper
 {
 
-    [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-    public User()
-    {
+    public int Id { get; set; }
 
-        this.Journal = new HashSet<Journal>();
+    public int UserIdUser { get; set; }
 
-    }
+    public System.DateTime dateTime { get; set; }
 
-
-    public int IdUser { get; set; }
-
-    public string userLogin { get; set; }
-
-    public string userPassword { get; set; }
+    public string Occasion { get; set; }
 
 
 
-    [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-
-    public virtual ICollection<Journal> Journal { get; set; }
+    public virtual User idUser { get; set; }
 
 }
 

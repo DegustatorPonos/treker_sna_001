@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Windows.Threading;
 
 namespace treker_sna_001
 {
@@ -20,10 +21,17 @@ namespace treker_sna_001
     /// </summary>
     public partial class MainWindow : Window
     {
+        private DispatcherTimer timer;
         public MainWindow()
         {
             InitializeComponent();
             loginTXT.Content = GlobalData.user.userLogin.ToString();
+
+            timer = new DispatcherTimer();
+            timer.Interval = TimeSpan.FromSeconds(1); // Проверка каждую секунду
+            timer.Tick += Timer_Tick;
+            timer.Start();
+
         }
 
         private void openjournal_Click(object sender, RoutedEventArgs e)
@@ -40,7 +48,8 @@ namespace treker_sna_001
 
         private void openhabit_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Открыть меню привычек");
+            frameTrans();
+            mainFrame.Navigate(new HabitPage());
         }
         private void Window_MouseDown(object sender, MouseButtonEventArgs e)
         {
@@ -68,6 +77,28 @@ namespace treker_sna_001
 
             btnStackPanel.Orientation = Orientation.Horizontal;
             mainFrame.Visibility = Visibility.Visible;
+        }
+
+        private void Timer_Tick(object sender, EventArgs e)
+        {
+            DateTime now = DateTime.Now;
+            var list = App.db.WakeUpper.ToList();
+            foreach (WakeUpper wakeUpper in list)
+            {
+                if (now >= wakeUpper.dateTime)
+                {
+                    showAlarmDialog(wakeUpper);
+                }
+            }
+        }
+
+        private void showAlarmDialog(WakeUpper wakeUpper)
+        {
+            AlarmDialog alarmDialog = new AlarmDialog(wakeUpper);
+            alarmDialog.ShowDialog();
+            App.db.WakeUpper.Remove(wakeUpper);
+            App.db.SaveChanges();
+
         }
     }
 }

@@ -27,7 +27,7 @@
                             <ColumnDefinition Width="5"/>
                         </Grid.ColumnDefinitions>
 
-                        <TextBlock Text="ДОБАВЛЕНИЕ ЗАПСИ"
+                        <TextBlock Text="ДОБАВЛЕНИЕ ЗАПИСИ"
    Foreground="DarkGray"
    FontSize="10"
    FontFamily="Montserrat"
@@ -163,7 +163,7 @@ Click="btnClose_Click">
                             </StackPanel>
 
                             <!-- Calculate Button -->
-                            <Button Content="Вычислить" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Margin="10" Click="CalculateButton_Click"/>
+                            <Button Content="Добавить запись" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Margin="10" Click="CalculateButton_Click" Cursor="Hand"/>
 
                             <!-- Result Label -->
                             <Label x:Name="ResultLabel" Content="" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" HorizontalAlignment="Center"/>

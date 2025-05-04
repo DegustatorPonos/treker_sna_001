@@ -45,23 +45,54 @@ namespace treker_sna_001
 
             string login = txtUser.Text;
             string password = txtPass.Password;
-
-            User user = App.db.Users.FirstOrDefault(us => us.userLogin == login && us.userPassword == password);
-            if (user == null)
+            if(login != string.Empty && password != string.Empty)
             {
-                // Выдаём ошибку
-                MessageBox.Show("Пользователь не найден!");
+                User user = App.db.Users.FirstOrDefault(us => us.userLogin == login && us.userPassword == password);
+                if (user == null)
+                {
+                    // Выдаём ошибку
+                    MessageBox.Show("Пользователь не найден!");
+                }
+                // Если сотрудник найден
+                else
+                {
+                    //запоминаем пользователя
+                    GlobalData.user = user;
+                    // Открываем главное окно
+                    MainWindow window = new MainWindow();
+                    window.Show();
+                    // Закрываем текущее окно с авторизацией
+                    Close();
+                }
             }
-            // Если сотрудник найден
             else
             {
-                //запоминаем пользователя
-                GlobalData.user = user;
-                // Открываем главное окно
-                MainWindow window = new MainWindow();
-                window.Show();
-                // Закрываем текущее окно с авторизацией
-                Close();
+                MessageBox.Show("Небходимо заполнить все поля!");
+            }
+        }
+
+        private void btnReg_Click(object sender, RoutedEventArgs e)
+        {
+            if (txtUser.Text != string.Empty && txtPass.Password != string.Empty)
+            {
+                if (App.db.Users.FirstOrDefault(us => us.userLogin == txtUser.Text) != null)
+                {
+                    // Выдаём ошибку
+                    MessageBox.Show("Пользователь c таким логином уже существует!");
+                    return;
+                }
+                User user = new User()
+                {
+                    userLogin = txtUser.Text,
+                    userPassword = txtPass.Password
+                };
+                App.db.Users.Add(user);
+                App.db.SaveChanges();
+                btnLogin_Click(sender, e);
+            }
+            else if(txtUser.Text == string.Empty || txtPass.Password == string.Empty)
+            {
+                MessageBox.Show("Необходимо заполнить все поля");
             }
         }
     }
