@@ -25,6 +25,17 @@
 
     </Style>
 
+    <Style x:Key="btnMenu" TargetType="Button">
+        <Setter Property="Background">
+            <Setter.Value>
+                <LinearGradientBrush StartPoint="0,1" EndPoint="1,0">
+                    <GradientStop Color="#060511" Offset="0"/>
+                    <GradientStop Color="#1B1428" Offset="1"/>
+                </LinearGradientBrush>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    
     <Style x:Key="WindowStyle" TargetType="Window">
         <Setter Property="WindowStyle" Value="None"/>
         <Setter Property="ResizeMode" Value="NoResize"/>

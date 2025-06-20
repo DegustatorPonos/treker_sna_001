@@ -21,7 +21,7 @@
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                     <Button Content="Установить" Name="Set" Click="Set_Click"/>
-                    <Button Content="Удалить" />
+                    <Button Content="Удалить" Name="Del" Click="Del_Click"/>
                 </StackPanel>
                 <ListBox Name="alarmListBox">
                     <ListBox.ItemTemplate>
@@ -33,7 +33,7 @@
                                     <ColumnDefinition/>
                                 </Grid.ColumnDefinitions>
                                 <TextBlock Text="{Binding Id}" Margin="0,0,5,0"/>
-                                <TextBlock Text="{Binding dateTime}" Grid.Column="1" Margin="0,0,5,0"/>
+                                <TextBlock Text="{Binding FormatDate}" Grid.Column="1" Margin="0,0,5,0" Cursor=""/>
                                 <TextBlock Text="{Binding Occasion}" Grid.Column="2"/>
                             </Grid>
                         </DataTemplate>

@@ -34,8 +34,8 @@
                             <TextBlock Grid.Column="1" Text="{Binding TypeDream}"/>
                             <TextBlock Grid.Column="2" Text="{Binding Feelings}"/>
                             <TextBlock Grid.Column="3" Text="{Binding WakeUpCount}"/>
-                            <TextBlock Grid.Column="4" Text="{Binding TimeDown}"/>
-                            <TextBlock Grid.Column="5" Text="{Binding TimeWakeUp}"/>
+                            <TextBlock Grid.Column="4" Text="{Binding formatStartDate}"/>
+                            <TextBlock Grid.Column="5" Text="{Binding formatEndtDate}"/>
                             <TextBlock Grid.Column="6" Text="{Binding Stress}"/>
                             <TextBlock Grid.Column="7" Text="{Binding Phisical}"/>
                             <TextBlock Grid.Column="8" Text="{Binding Temperature}"/>
@@ -43,6 +43,7 @@
                     </DataTemplate>
                 </ListBox.ItemTemplate>
             </ListBox>
+            
         </StackPanel>
     </Grid>
 </Page>

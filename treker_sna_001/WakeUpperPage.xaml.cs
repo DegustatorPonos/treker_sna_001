@@ -30,13 +30,10 @@ namespace treker_sna_001
             "другое"
         };
        
-
         public WakeUpperPage()
         {
             InitializeComponent();
             InitializeComboBoxes();
-
-            
             LoadWakeUpper();
         }
 
@@ -98,6 +95,20 @@ namespace treker_sna_001
             {
                 MessageBox.Show("Пожалуйста, выберите час и минуту.");
             }
+        }
+
+        private void Del_Click(object sender, RoutedEventArgs e)
+        {
+            if(alarmListBox.SelectedItem == null)
+            {
+                MessageBox.Show("Необходимо выбрать элемент");
+                return;
+            }
+            WakeUpper wakeUpper = alarmListBox.SelectedItem as WakeUpper;
+            App.db.WakeUpper.Remove(wakeUpper);
+            App.db.SaveChanges();
+            LoadWakeUpper();
+            MessageBox.Show("Запись удалена");
         }
     }
 }

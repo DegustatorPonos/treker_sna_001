@@ -10,23 +10,7 @@
       Style="{DynamicResource pageStyle}">
 
     <Grid>
-        <StackPanel>
-            <!--<ListBox Name="alarmListBox">
-                <ListBox.ItemTemplate>
-                    <DataTemplate>
-                        <Grid>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition/>
-                                <ColumnDefinition/>
-                                <ColumnDefinition/>
-                            </Grid.ColumnDefinitions>
-                            <TextBlock Text="{Binding Id}" Margin="0,0,5,0"/>
-                            <TextBlock Text="{Binding dateTime}" Grid.Column="1" Margin="0,0,5,0"/>
-                            <TextBlock Text="{Binding Occasion}" Grid.Column="2"/>
-                        </Grid>
-                    </DataTemplate>
-                </ListBox.ItemTemplate>
-            </ListBox>-->
+        <StackPanel Name="statsStackPanel">
             <TextBlock Name="txt1"/>
             <TextBlock Name="txt2"/>
             <TextBlock Name="txt3"/>

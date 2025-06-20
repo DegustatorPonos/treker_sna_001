@@ -95,6 +95,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Kurs1.edmx</DependentUpon>
     </Compile>
+    <Compile Include="NoteDateClass.cs" />
     <Compile Include="regWindow.xaml.cs">
       <DependentUpon>regWindow.xaml</DependentUpon>
     </Compile>
@@ -104,6 +105,7 @@
     <Compile Include="User.cs">
       <DependentUpon>Kurs1.tt</DependentUpon>
     </Compile>
+    <Compile Include="WakeUpFormatDAteClass.cs" />
     <Compile Include="WakeUpper.cs">
       <DependentUpon>Kurs1.tt</DependentUpon>
     </Compile>

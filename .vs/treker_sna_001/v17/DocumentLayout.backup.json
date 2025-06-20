@@ -3,52 +3,44 @@
   "WorkspaceRootPath": "C:\\Users\\\u0445\u043E\u0440\u0435\u043A2\\source\\repos\\treker_sna_001\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{BF4875F1-232A-44A8-95A9-8F75B99AAE06}|treker_sna_001\\treker_sna_001.csproj|c:\\users\\\u0445\u043E\u0440\u0435\u043A2\\source\\repos\\treker_sna_001\\treker_sna_001\\regwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BF4875F1-232A-44A8-95A9-8F75B99AAE06}|treker_sna_001\\treker_sna_001.csproj|solutionrelative:treker_sna_001\\regwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BF4875F1-232A-44A8-95A9-8F75B99AAE06}|treker_sna_001\\treker_sna_001.csproj|c:\\users\\\u0445\u043E\u0440\u0435\u043A2\\source\\repos\\treker_sna_001\\treker_sna_001\\addnotewindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BF4875F1-232A-44A8-95A9-8F75B99AAE06}|treker_sna_001\\treker_sna_001.csproj|solutionrelative:treker_sna_001\\addnotewindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BF4875F1-232A-44A8-95A9-8F75B99AAE06}|treker_sna_001\\treker_sna_001.csproj|c:\\users\\\u0445\u043E\u0440\u0435\u043A2\\source\\repos\\treker_sna_001\\treker_sna_001\\addnotewindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{BF4875F1-232A-44A8-95A9-8F75B99AAE06}|treker_sna_001\\treker_sna_001.csproj|solutionrelative:treker_sna_001\\addnotewindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BF4875F1-232A-44A8-95A9-8F75B99AAE06}|treker_sna_001\\treker_sna_001.csproj|C:\\Users\\\u0445\u043E\u0440\u0435\u043A2\\source\\repos\\treker_sna_001\\treker_sna_001\\habitpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{BF4875F1-232A-44A8-95A9-8F75B99AAE06}|treker_sna_001\\treker_sna_001.csproj|solutionrelative:treker_sna_001\\habitpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{BF4875F1-232A-44A8-95A9-8F75B99AAE06}|treker_sna_001\\treker_sna_001.csproj|C:\\Users\\\u0445\u043E\u0440\u0435\u043A2\\source\\repos\\treker_sna_001\\treker_sna_001\\habitpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BF4875F1-232A-44A8-95A9-8F75B99AAE06}|treker_sna_001\\treker_sna_001.csproj|solutionrelative:treker_sna_001\\habitpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{BF4875F1-232A-44A8-95A9-8F75B99AAE06}|treker_sna_001\\treker_sna_001.csproj|C:\\Users\\\u0445\u043E\u0440\u0435\u043A2\\source\\repos\\treker_sna_001\\treker_sna_001\\wakeupperpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{BF4875F1-232A-44A8-95A9-8F75B99AAE06}|treker_sna_001\\treker_sna_001.csproj|solutionrelative:treker_sna_001\\wakeupperpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BF4875F1-232A-44A8-95A9-8F75B99AAE06}|treker_sna_001\\treker_sna_001.csproj|c:\\users\\\u0445\u043E\u0440\u0435\u043A2\\source\\repos\\treker_sna_001\\treker_sna_001\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{BF4875F1-232A-44A8-95A9-8F75B99AAE06}|treker_sna_001\\treker_sna_001.csproj|solutionrelative:treker_sna_001\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{BF4875F1-232A-44A8-95A9-8F75B99AAE06}|treker_sna_001\\treker_sna_001.csproj|C:\\Users\\\u0445\u043E\u0440\u0435\u043A2\\source\\repos\\treker_sna_001\\treker_sna_001\\journalpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{BF4875F1-232A-44A8-95A9-8F75B99AAE06}|treker_sna_001\\treker_sna_001.csproj|solutionrelative:treker_sna_001\\journalpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{BF4875F1-232A-44A8-95A9-8F75B99AAE06}|treker_sna_001\\treker_sna_001.csproj|C:\\Users\\\u0445\u043E\u0440\u0435\u043A2\\source\\repos\\treker_sna_001\\treker_sna_001\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{BF4875F1-232A-44A8-95A9-8F75B99AAE06}|treker_sna_001\\treker_sna_001.csproj|solutionrelative:treker_sna_001\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BF4875F1-232A-44A8-95A9-8F75B99AAE06}|treker_sna_001\\treker_sna_001.csproj|c:\\users\\\u0445\u043E\u0440\u0435\u043A2\\source\\repos\\treker_sna_001\\treker_sna_001\\regwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{BF4875F1-232A-44A8-95A9-8F75B99AAE06}|treker_sna_001\\treker_sna_001.csproj|solutionrelative:treker_sna_001\\regwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{BF4875F1-232A-44A8-95A9-8F75B99AAE06}|treker_sna_001\\treker_sna_001.csproj|C:\\Users\\\u0445\u043E\u0440\u0435\u043A2\\source\\repos\\treker_sna_001\\treker_sna_001\\openframestylemainwin.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{BF4875F1-232A-44A8-95A9-8F75B99AAE06}|treker_sna_001\\treker_sna_001.csproj|solutionrelative:treker_sna_001\\openframestylemainwin.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BF4875F1-232A-44A8-95A9-8F75B99AAE06}|treker_sna_001\\treker_sna_001.csproj|C:\\Users\\\u0445\u043E\u0440\u0435\u043A2\\source\\repos\\treker_sna_001\\treker_sna_001\\journal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BF4875F1-232A-44A8-95A9-8F75B99AAE06}|treker_sna_001\\treker_sna_001.csproj|solutionrelative:treker_sna_001\\journal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{BF4875F1-232A-44A8-95A9-8F75B99AAE06}|treker_sna_001\\treker_sna_001.csproj|c:\\users\\\u0445\u043E\u0440\u0435\u043A2\\source\\repos\\treker_sna_001\\treker_sna_001\\globaldata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BF4875F1-232A-44A8-95A9-8F75B99AAE06}|treker_sna_001\\treker_sna_001.csproj|solutionrelative:treker_sna_001\\globaldata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BF4875F1-232A-44A8-95A9-8F75B99AAE06}|treker_sna_001\\treker_sna_001.csproj|c:\\users\\\u0445\u043E\u0440\u0435\u043A2\\source\\repos\\treker_sna_001\\treker_sna_001\\test1.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BF4875F1-232A-44A8-95A9-8F75B99AAE06}|treker_sna_001\\treker_sna_001.csproj|solutionrelative:treker_sna_001\\test1.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{BF4875F1-232A-44A8-95A9-8F75B99AAE06}|treker_sna_001\\treker_sna_001.csproj|c:\\users\\\u0445\u043E\u0440\u0435\u043A2\\source\\repos\\treker_sna_001\\treker_sna_001\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{BF4875F1-232A-44A8-95A9-8F75B99AAE06}|treker_sna_001\\treker_sna_001.csproj|solutionrelative:treker_sna_001\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BF4875F1-232A-44A8-95A9-8F75B99AAE06}|treker_sna_001\\treker_sna_001.csproj|c:\\users\\\u0445\u043E\u0440\u0435\u043A2\\source\\repos\\treker_sna_001\\treker_sna_001\\habitpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BF4875F1-232A-44A8-95A9-8F75B99AAE06}|treker_sna_001\\treker_sna_001.csproj|solutionrelative:treker_sna_001\\habitpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{BF4875F1-232A-44A8-95A9-8F75B99AAE06}|treker_sna_001\\treker_sna_001.csproj|C:\\Users\\\u0445\u043E\u0440\u0435\u043A2\\source\\repos\\treker_sna_001\\treker_sna_001\\dictionary1.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{BF4875F1-232A-44A8-95A9-8F75B99AAE06}|treker_sna_001\\treker_sna_001.csproj|solutionrelative:treker_sna_001\\dictionary1.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BF4875F1-232A-44A8-95A9-8F75B99AAE06}|treker_sna_001\\treker_sna_001.csproj|C:\\Users\\\u0445\u043E\u0440\u0435\u043A2\\source\\repos\\treker_sna_001\\treker_sna_001\\wakeupperpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BF4875F1-232A-44A8-95A9-8F75B99AAE06}|treker_sna_001\\treker_sna_001.csproj|solutionrelative:treker_sna_001\\wakeupperpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{BF4875F1-232A-44A8-95A9-8F75B99AAE06}|treker_sna_001\\treker_sna_001.csproj|C:\\Users\\\u0445\u043E\u0440\u0435\u043A2\\source\\repos\\treker_sna_001\\treker_sna_001\\startstylemainwin.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{BF4875F1-232A-44A8-95A9-8F75B99AAE06}|treker_sna_001\\treker_sna_001.csproj|solutionrelative:treker_sna_001\\startstylemainwin.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BF4875F1-232A-44A8-95A9-8F75B99AAE06}|treker_sna_001\\treker_sna_001.csproj|C:\\Users\\\u0445\u043E\u0440\u0435\u043A2\\source\\repos\\treker_sna_001\\treker_sna_001\\habitpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{BF4875F1-232A-44A8-95A9-8F75B99AAE06}|treker_sna_001\\treker_sna_001.csproj|solutionrelative:treker_sna_001\\habitpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     }
   ],
   "DocumentGroupContainers": [
@@ -58,101 +50,48 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "addNoteWindow.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\\u0445\u043E\u0440\u0435\u043A2\\source\\repos\\treker_sna_001\\treker_sna_001\\addNoteWindow.xaml.cs",
-              "RelativeDocumentMoniker": "treker_sna_001\\addNoteWindow.xaml.cs",
-              "ToolTip": "C:\\Users\\\u0445\u043E\u0440\u0435\u043A2\\source\\repos\\treker_sna_001\\treker_sna_001\\addNoteWindow.xaml.cs",
-              "RelativeToolTip": "treker_sna_001\\addNoteWindow.xaml.cs",
-              "ViewState": "AgIAABIAAAAAAAAAAAAAACoAAAAZAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-04T18:30:18.649Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "regWindow.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\\u0445\u043E\u0440\u0435\u043A2\\source\\repos\\treker_sna_001\\treker_sna_001\\regWindow.xaml.cs",
-              "RelativeDocumentMoniker": "treker_sna_001\\regWindow.xaml.cs",
-              "ToolTip": "C:\\Users\\\u0445\u043E\u0440\u0435\u043A2\\source\\repos\\treker_sna_001\\treker_sna_001\\regWindow.xaml.cs*",
-              "RelativeToolTip": "treker_sna_001\\regWindow.xaml.cs*",
-              "ViewState": "AgIAACkAAAAAAAAAAAAkwEUAAAA+AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-04T08:15:09.029Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "Test1.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\\u0445\u043E\u0440\u0435\u043A2\\source\\repos\\treker_sna_001\\treker_sna_001\\Test1.xaml.cs",
-              "RelativeDocumentMoniker": "treker_sna_001\\Test1.xaml.cs",
-              "ToolTip": "C:\\Users\\\u0445\u043E\u0440\u0435\u043A2\\source\\repos\\treker_sna_001\\treker_sna_001\\Test1.xaml.cs",
-              "RelativeToolTip": "treker_sna_001\\Test1.xaml.cs",
-              "ViewState": "AgIAACgAAAAAAAAAAAAqwD4AAABLAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-04T06:57:38.443Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "Journal.cs",
-              "DocumentMoniker": "C:\\Users\\\u0445\u043E\u0440\u0435\u043A2\\source\\repos\\treker_sna_001\\treker_sna_001\\Journal.cs",
-              "RelativeDocumentMoniker": "treker_sna_001\\Journal.cs",
-              "ToolTip": "C:\\Users\\\u0445\u043E\u0440\u0435\u043A2\\source\\repos\\treker_sna_001\\treker_sna_001\\Journal.cs",
-              "RelativeToolTip": "treker_sna_001\\Journal.cs",
-              "ViewState": "AgIAAA8AAAAAAAAAAAAAABkAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-03T17:54:39.421Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "MainWindow.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\\u0445\u043E\u0440\u0435\u043A2\\source\\repos\\treker_sna_001\\treker_sna_001\\MainWindow.xaml.cs",
-              "RelativeDocumentMoniker": "treker_sna_001\\MainWindow.xaml.cs",
-              "ToolTip": "C:\\Users\\\u0445\u043E\u0440\u0435\u043A2\\source\\repos\\treker_sna_001\\treker_sna_001\\MainWindow.xaml.cs",
-              "RelativeToolTip": "treker_sna_001\\MainWindow.xaml.cs",
-              "ViewState": "AgIAADIAAAAAAAAAAAAIwEMAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-01T19:01:40.81Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "HabitPage.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\\u0445\u043E\u0440\u0435\u043A2\\source\\repos\\treker_sna_001\\treker_sna_001\\HabitPage.xaml.cs",
-              "RelativeDocumentMoniker": "treker_sna_001\\HabitPage.xaml.cs",
-              "ToolTip": "C:\\Users\\\u0445\u043E\u0440\u0435\u043A2\\source\\repos\\treker_sna_001\\treker_sna_001\\HabitPage.xaml.cs",
-              "RelativeToolTip": "treker_sna_001\\HabitPage.xaml.cs",
-              "ViewState": "AgIAAHUAAAAAAAAAAAAqwHEAAAA6AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-28T08:31:11.427Z",
+              "DocumentIndex": 4,
+              "Title": "openFrameStyleMainWin.xaml",
+              "DocumentMoniker": "C:\\Users\\\u0445\u043E\u0440\u0435\u043A2\\source\\repos\\treker_sna_001\\treker_sna_001\\openFrameStyleMainWin.xaml",
+              "RelativeDocumentMoniker": "treker_sna_001\\openFrameStyleMainWin.xaml",
+              "ToolTip": "C:\\Users\\\u0445\u043E\u0440\u0435\u043A2\\source\\repos\\treker_sna_001\\treker_sna_001\\openFrameStyleMainWin.xaml",
+              "RelativeToolTip": "treker_sna_001\\openFrameStyleMainWin.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-06-14T04:03:19.221Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "HabitPage.xaml",
-              "DocumentMoniker": "C:\\Users\\\u0445\u043E\u0440\u0435\u043A2\\source\\repos\\treker_sna_001\\treker_sna_001\\HabitPage.xaml",
-              "RelativeDocumentMoniker": "treker_sna_001\\HabitPage.xaml",
-              "ToolTip": "C:\\Users\\\u0445\u043E\u0440\u0435\u043A2\\source\\repos\\treker_sna_001\\treker_sna_001\\HabitPage.xaml",
-              "RelativeToolTip": "treker_sna_001\\HabitPage.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-04-28T08:26:19.818Z",
+              "Title": "MainWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\\u0445\u043E\u0440\u0435\u043A2\\source\\repos\\treker_sna_001\\treker_sna_001\\MainWindow.xaml.cs",
+              "RelativeDocumentMoniker": "treker_sna_001\\MainWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\\u0445\u043E\u0440\u0435\u043A2\\source\\repos\\treker_sna_001\\treker_sna_001\\MainWindow.xaml.cs",
+              "RelativeToolTip": "treker_sna_001\\MainWindow.xaml.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAADYAAAA1AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-12T15:02:15.3Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 2,
+              "Title": "journalPage.xaml",
+              "DocumentMoniker": "C:\\Users\\\u0445\u043E\u0440\u0435\u043A2\\source\\repos\\treker_sna_001\\treker_sna_001\\journalPage.xaml",
+              "RelativeDocumentMoniker": "treker_sna_001\\journalPage.xaml",
+              "ToolTip": "C:\\Users\\\u0445\u043E\u0440\u0435\u043A2\\source\\repos\\treker_sna_001\\treker_sna_001\\journalPage.xaml",
+              "RelativeToolTip": "treker_sna_001\\journalPage.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-06-04T11:40:12.997Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "WakeUpperPage.xaml",
               "DocumentMoniker": "C:\\Users\\\u0445\u043E\u0440\u0435\u043A2\\source\\repos\\treker_sna_001\\treker_sna_001\\WakeUpperPage.xaml",
               "RelativeDocumentMoniker": "treker_sna_001\\WakeUpperPage.xaml",
@@ -164,19 +103,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "addNoteWindow.xaml",
-              "DocumentMoniker": "C:\\Users\\\u0445\u043E\u0440\u0435\u043A2\\source\\repos\\treker_sna_001\\treker_sna_001\\addNoteWindow.xaml",
-              "RelativeDocumentMoniker": "treker_sna_001\\addNoteWindow.xaml",
-              "ToolTip": "C:\\Users\\\u0445\u043E\u0440\u0435\u043A2\\source\\repos\\treker_sna_001\\treker_sna_001\\addNoteWindow.xaml",
-              "RelativeToolTip": "treker_sna_001\\addNoteWindow.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-05-04T10:27:44.846Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "MainWindow.xaml",
               "DocumentMoniker": "C:\\Users\\\u0445\u043E\u0440\u0435\u043A2\\source\\repos\\treker_sna_001\\treker_sna_001\\MainWindow.xaml",
               "RelativeDocumentMoniker": "treker_sna_001\\MainWindow.xaml",
@@ -188,27 +115,64 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "WakeUpperPage.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\\u0445\u043E\u0440\u0435\u043A2\\source\\repos\\treker_sna_001\\treker_sna_001\\WakeUpperPage.xaml.cs",
-              "RelativeDocumentMoniker": "treker_sna_001\\WakeUpperPage.xaml.cs",
-              "ToolTip": "C:\\Users\\\u0445\u043E\u0440\u0435\u043A2\\source\\repos\\treker_sna_001\\treker_sna_001\\WakeUpperPage.xaml.cs",
-              "RelativeToolTip": "treker_sna_001\\WakeUpperPage.xaml.cs",
-              "ViewState": "AgIAAEcAAAAAAAAAAAAIwBgAAAAFAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "HabitPage.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\\u0445\u043E\u0440\u0435\u043A2\\source\\repos\\treker_sna_001\\treker_sna_001\\HabitPage.xaml.cs",
+              "RelativeDocumentMoniker": "treker_sna_001\\HabitPage.xaml.cs",
+              "ToolTip": "C:\\Users\\\u0445\u043E\u0440\u0435\u043A2\\source\\repos\\treker_sna_001\\treker_sna_001\\HabitPage.xaml.cs*",
+              "RelativeToolTip": "treker_sna_001\\HabitPage.xaml.cs*",
+              "ViewState": "AgIAAFIAAAAAAAAAAAAgwI0AAAAvAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-24T15:18:16.679Z"
+              "WhenOpened": "2025-04-28T08:31:11.427Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "GlobalData.cs",
+              "DocumentMoniker": "C:\\Users\\\u0445\u043E\u0440\u0435\u043A2\\source\\repos\\treker_sna_001\\treker_sna_001\\GlobalData.cs",
+              "RelativeDocumentMoniker": "treker_sna_001\\GlobalData.cs",
+              "ToolTip": "C:\\Users\\\u0445\u043E\u0440\u0435\u043A2\\source\\repos\\treker_sna_001\\treker_sna_001\\GlobalData.cs",
+              "RelativeToolTip": "treker_sna_001\\GlobalData.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-20T16:14:37.817Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "startStyleMainWin.xaml",
+              "DocumentMoniker": "C:\\Users\\\u0445\u043E\u0440\u0435\u043A2\\source\\repos\\treker_sna_001\\treker_sna_001\\startStyleMainWin.xaml",
+              "RelativeDocumentMoniker": "treker_sna_001\\startStyleMainWin.xaml",
+              "ToolTip": "C:\\Users\\\u0445\u043E\u0440\u0435\u043A2\\source\\repos\\treker_sna_001\\treker_sna_001\\startStyleMainWin.xaml",
+              "RelativeToolTip": "treker_sna_001\\startStyleMainWin.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-06-14T04:03:35.705Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 7,
-              "Title": "regWindow.xaml",
-              "DocumentMoniker": "C:\\Users\\\u0445\u043E\u0440\u0435\u043A2\\source\\repos\\treker_sna_001\\treker_sna_001\\regWindow.xaml",
-              "RelativeDocumentMoniker": "treker_sna_001\\regWindow.xaml",
-              "ToolTip": "C:\\Users\\\u0445\u043E\u0440\u0435\u043A2\\source\\repos\\treker_sna_001\\treker_sna_001\\regWindow.xaml",
-              "RelativeToolTip": "treker_sna_001\\regWindow.xaml",
+              "Title": "Dictionary1.xaml",
+              "DocumentMoniker": "C:\\Users\\\u0445\u043E\u0440\u0435\u043A2\\source\\repos\\treker_sna_001\\treker_sna_001\\Dictionary1.xaml",
+              "RelativeDocumentMoniker": "treker_sna_001\\Dictionary1.xaml",
+              "ToolTip": "C:\\Users\\\u0445\u043E\u0440\u0435\u043A2\\source\\repos\\treker_sna_001\\treker_sna_001\\Dictionary1.xaml",
+              "RelativeToolTip": "treker_sna_001\\Dictionary1.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-05-04T08:07:37.463Z",
+              "WhenOpened": "2025-06-14T04:04:10.785Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "HabitPage.xaml",
+              "DocumentMoniker": "C:\\Users\\\u0445\u043E\u0440\u0435\u043A2\\source\\repos\\treker_sna_001\\treker_sna_001\\HabitPage.xaml",
+              "RelativeDocumentMoniker": "treker_sna_001\\HabitPage.xaml",
+              "ToolTip": "C:\\Users\\\u0445\u043E\u0440\u0435\u043A2\\source\\repos\\treker_sna_001\\treker_sna_001\\HabitPage.xaml",
+              "RelativeToolTip": "treker_sna_001\\HabitPage.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-04-28T08:26:19.818Z"
             }
           ]
         }

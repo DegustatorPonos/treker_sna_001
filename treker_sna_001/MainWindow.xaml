@@ -28,13 +28,15 @@
                             <ColumnDefinition Width="5"/>
                         </Grid.ColumnDefinitions>
 
-                        <TextBlock Text="ГЛАВНОЕ МЕНЮ"
-                   Foreground="DarkGray"
-                   FontSize="10"
-                   FontFamily="Montserrat"
-                   Grid.Column="0"
-                   VerticalAlignment="Center"
-                   Margin="10,0,0,0" Grid.ColumnSpan="5"/>
+                        <Button Name="menu" Click="menu_Click" Grid.Column="0"
+VerticalAlignment="Center"
+Margin="10,0,0,0" HorizontalAlignment="Left" Style="{DynamicResource btnMenu}">
+                            <TextBlock Text="ГЛАВНОЕ МЕНЮ"
+                Name="infoTextBlock"
+Foreground="DarkGray"
+FontSize="10"
+FontFamily="Montserrat"/>
+                        </Button>
 
                         <Button x:Name="btnMinimize"                           
                 BorderThickness="0"

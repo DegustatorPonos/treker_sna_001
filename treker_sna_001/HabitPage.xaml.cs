@@ -24,9 +24,17 @@ namespace treker_sna_001
         public HabitPage()
         {
             InitializeComponent();
-            List<Journal> list = App.db.Journals.ToList();
+            List<Journal> list = App.db.Journals.Where(x => x.UserIdUser == GlobalData.user.IdUser).ToList();
             //Всего записей 
             int JornalCount = list.Count;
+
+            if(JornalCount == 0)
+            {
+                MessageBox.Show("В журнале нет записей. Статистика недоступна.");
+                statsStackPanel.Visibility = Visibility.Collapsed;
+                return;
+            }
+
             //Записей с типом сна глубокий
             int depthCount = 0;
             //Записей с ощущением бодрости
@@ -49,6 +57,10 @@ namespace treker_sna_001
             List<DateTime> DTlist = new List<DateTime>();
             //Сумма времени подъема
             List<DateTime> DTlistWake = new List<DateTime>();
+            //Сумма времени сна
+            List<TimeSpan> TotalSumList = new List<TimeSpan>();
+            //подсчет баллов
+            double ba;
 
             foreach (Journal journal in list)
             {
@@ -73,10 +85,8 @@ namespace treker_sna_001
                 if(journal.Phisical == "ДА") phisCount++;
                 DTlist.Add(journal.TimeDown);
                 DTlistWake.Add(journal.TimeWakeUp);
+                TotalSumList.Add(journal.SleepDuration);
             }
-
-            //Проверка наличия записей
-            if(list.Count == 0) return;
 
             //АнАлИз типа сна
             #region
@@ -124,13 +134,38 @@ namespace treker_sna_001
             //Анализ времени отбоя
             #region
             TimeSpan averageTime = CalculateAverageTime(DTlist);
-            txt4.Text = averageTime.ToString(@"hh\:mm");
+            txt4.Text =$"Среднее время отбоя: {averageTime.ToString(@"hh\:mm")}";
             #endregion
             //Анализ времени подъема
             #region
             TimeSpan averageTimeWake = CalculateAverageTime(DTlistWake);
-            txt5.Text = averageTimeWake.ToString(@"hh\:mm");
+            txt5.Text = $"Среднее время подъема: {averageTimeWake.ToString(@"hh\:mm")}";
             #endregion
+            TimeSpan sum = TimeSpan.FromSeconds(0);
+            //Подсчет среднего времени сна
+            foreach (TimeSpan sleep in TotalSumList)
+            {
+                sum += sleep;
+            }
+            //будем считать, что 8 это нормальное время
+            TimeSpan ts7 = TimeSpan.FromHours(7);
+            TimeSpan ts9 = TimeSpan.FromHours(9);
+            //подсчет среднего времени
+            TimeSpan srTime = TimeSpan.FromTicks(sum.Ticks / TotalSumList.Count);
+           
+            if(srTime >= ts7 && srTime <= ts9)
+            {
+                txt6.Text = $"Средняя продолжительность сна в норме и равна: {srTime.ToString("hh\\:mm")}";
+            }
+            else if (srTime > ts9)
+            {
+                txt6.Text = $"Средняя продолжительность сна превышает норму на {(srTime - ts9).ToString("hh\\:mm")} и равна: {srTime.ToString("hh\\:mm")}";
+            }
+            else
+            {
+                txt6.Text = $"Средняя продолжительность сна меньше нормы на {(ts7 - srTime).ToString("hh\\:mm")} и равна: {srTime.ToString("hh\\:mm")}";
+            }
+            txt7.Text = $"Всего записей: {list.Count}";
         }
         public static TimeSpan CalculateAverageTime(List<DateTime> dateTimes)
         {

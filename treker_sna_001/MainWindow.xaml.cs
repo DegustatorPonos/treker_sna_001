@@ -38,18 +38,21 @@ namespace treker_sna_001
         {
             frameTrans();
             mainFrame.Navigate(new journalPage());
+            infoTextBlock.Text = "МЕНЮ ЖУРНАЛА";
         }
 
         private void openreminder_Click(object sender, RoutedEventArgs e)
         {
             frameTrans();
             mainFrame.Navigate(new WakeUpperPage());
+            infoTextBlock.Text = "МЕНЮ НАПОМИНАНИЙ";
         }
 
         private void openhabit_Click(object sender, RoutedEventArgs e)
         {
             frameTrans();
             mainFrame.Navigate(new HabitPage());
+            infoTextBlock.Text = "СТРАНИЦА СТАТИСТИКИ";
         }
         private void Window_MouseDown(object sender, MouseButtonEventArgs e)
         {
@@ -98,6 +101,11 @@ namespace treker_sna_001
             alarmDialog.ShowDialog();
             App.db.WakeUpper.Remove(wakeUpper);
             App.db.SaveChanges();
+
+        }
+
+        private void menu_Click(object sender, RoutedEventArgs e)
+        {
 
         }
     }
