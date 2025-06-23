@@ -17,8 +17,6 @@ C:\Users\хорек2\source\repos\treker_sna_001\treker_sna_001\obj\Debug\journa
 C:\Users\хорек2\source\repos\treker_sna_001\treker_sna_001\obj\Debug\journalPage.baml
 C:\Users\хорек2\source\repos\treker_sna_001\treker_sna_001\obj\Debug\addNoteWindow.g.cs
 C:\Users\хорек2\source\repos\treker_sna_001\treker_sna_001\obj\Debug\addNoteWindow.baml
-C:\Users\хорек2\source\repos\treker_sna_001\treker_sna_001\obj\Debug\Test1.g.cs
-C:\Users\хорек2\source\repos\treker_sna_001\treker_sna_001\obj\Debug\Test1.baml
 C:\Users\хорек2\source\repos\treker_sna_001\treker_sna_001\obj\Debug\Dictionary1.baml
 C:\Users\хорек2\source\repos\treker_sna_001\treker_sna_001\bin\Debug\EntityFramework.dll
 C:\Users\хорек2\source\repos\treker_sna_001\treker_sna_001\bin\Debug\EntityFramework.SqlServer.dll

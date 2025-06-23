@@ -10,36 +10,30 @@
       Style="{DynamicResource pageStyle}">
 
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="320"/>
+        </Grid.RowDefinitions>
         <StackPanel>
-            <StackPanel>
-                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Cursor="">
-                    <TextBlock Text="Установить напоминание для: "/>
-                    <ComboBox Name="napomainanie" Width="100"/>
-                    <TextBlock Text=" в "/>
-                    <ComboBox x:Name="HourComboBox" Width="50"/>
-                    <ComboBox x:Name="MinuteComboBox" Width="50"/>
-                </StackPanel>
-                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                    <Button Content="Установить" Name="Set" Click="Set_Click"/>
-                    <Button Content="Удалить" Name="Del" Click="Del_Click"/>
-                </StackPanel>
-                <ListBox Name="alarmListBox">
-                    <ListBox.ItemTemplate>
-                        <DataTemplate>
-                            <Grid>
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition/>
-                                    <ColumnDefinition/>
-                                    <ColumnDefinition/>
-                                </Grid.ColumnDefinitions>
-                                <TextBlock Text="{Binding Id}" Margin="0,0,5,0"/>
-                                <TextBlock Text="{Binding FormatDate}" Grid.Column="1" Margin="0,0,5,0" Cursor=""/>
-                                <TextBlock Text="{Binding Occasion}" Grid.Column="2"/>
-                            </Grid>
-                        </DataTemplate>
-                    </ListBox.ItemTemplate>
-                </ListBox>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Cursor="">
+                <TextBlock Text="Установить напоминание для: "/>
+                <ComboBox Name="napomainanie" Width="100" Style="{StaticResource ComboBoxStyle}"/>
+                <TextBlock Text=" в "/>
+                <ComboBox x:Name="HourComboBox" Width="50" Style="{StaticResource ComboBoxStyle}"/>
+                <ComboBox x:Name="MinuteComboBox" Width="50" Style="{StaticResource ComboBoxStyle}"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <Button Content="Установить" Name="Set" Click="Set_Click"/>
+                <Button Content="Удалить" Name="Del" Click="Del_Click"/>
             </StackPanel>
         </StackPanel>
+            <DataGrid Name="WakeUpperDataGrid" Style="{StaticResource DataGridStyle}" Width="460" Grid.Row="1">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Пользователь" Binding="{Binding idUser.userLogin}" Foreground="DarkGray" Width="150"/>
+                    <DataGridTextColumn Header="Дата" Binding="{Binding FormatDate}" Foreground="DarkGray" Width="75"/>
+                    <DataGridTextColumn Header="Время" Binding="{Binding FormatTime}" Foreground="DarkGray" Width="75"/>
+                    <DataGridTextColumn Header="Причина" Binding="{Binding FormatOcassion}" Foreground="DarkGray" Width="150"/>
+                </DataGrid.Columns>
+            </DataGrid>
     </Grid>
 </Page>

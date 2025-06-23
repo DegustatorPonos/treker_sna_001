@@ -27,18 +27,12 @@
                             <ColumnDefinition Width="25"/>
                             <ColumnDefinition Width="5"/>
                         </Grid.ColumnDefinitions>
-
-                        <Button Name="menu" Click="menu_Click" Grid.Column="0"
-VerticalAlignment="Center"
-Margin="10,0,0,0" HorizontalAlignment="Left" Style="{DynamicResource btnMenu}">
-                            <TextBlock Text="ГЛАВНОЕ МЕНЮ"
-                Name="infoTextBlock"
+                        <TextBlock Text="ГЛАВНОЕ МЕНЮ" Name="infoTextBlock"
 Foreground="DarkGray"
 FontSize="10"
 FontFamily="Montserrat"/>
-                        </Button>
 
-                        <Button x:Name="btnMinimize"                           
+                            <Button x:Name="btnMinimize"                           
                 BorderThickness="0"
                 Content="-"
                 Foreground="White"

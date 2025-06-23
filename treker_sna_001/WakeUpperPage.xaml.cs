@@ -37,6 +37,7 @@ namespace treker_sna_001
             LoadWakeUpper();
         }
 
+
         private void InitializeComboBoxes()
         {
             // Заполняем списки часов
@@ -61,7 +62,7 @@ namespace treker_sna_001
 
         public void LoadWakeUpper()
         {
-            alarmListBox.ItemsSource = App.db.WakeUpper.ToList();
+            WakeUpperDataGrid.ItemsSource = App.db.WakeUpper.ToList();
         }
 
         private void Set_Click(object sender, RoutedEventArgs e)
@@ -90,6 +91,9 @@ namespace treker_sna_001
                 App.db.SaveChanges();
 
                 LoadWakeUpper();
+                HourComboBox.SelectedIndex = 0;
+                MinuteComboBox.SelectedIndex = 0;
+                napomainanie.SelectedIndex = 0;
             }
             else
             {
@@ -99,16 +103,19 @@ namespace treker_sna_001
 
         private void Del_Click(object sender, RoutedEventArgs e)
         {
-            if(alarmListBox.SelectedItem == null)
+            if(WakeUpperDataGrid.SelectedItem == null)
             {
                 MessageBox.Show("Необходимо выбрать элемент");
                 return;
             }
-            WakeUpper wakeUpper = alarmListBox.SelectedItem as WakeUpper;
-            App.db.WakeUpper.Remove(wakeUpper);
-            App.db.SaveChanges();
-            LoadWakeUpper();
-            MessageBox.Show("Запись удалена");
+            if (MessageBox.Show("удалить?", "Предупреждение", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
+            {
+                WakeUpper wakeUpper = WakeUpperDataGrid.SelectedItem as WakeUpper;
+                App.db.WakeUpper.Remove(wakeUpper);
+                App.db.SaveChanges();
+                MessageBox.Show("Запись удалена");
+                LoadWakeUpper();
+            }
         }
     }
 }

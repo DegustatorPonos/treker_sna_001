@@ -38,21 +38,25 @@ namespace treker_sna_001
 
         private void LoadNotes()
         {
-            notes.ItemsSource = App.db.Journals.Where(j => j.UserIdUser == userID).ToList();
+            JournalDataGrid.ItemsSource = App.db.Journals.Where(j => j.UserIdUser == userID).ToList();
         }
 
         private void delnote_Click(object sender, RoutedEventArgs e)
         {
-            if (notes.SelectedItem == null)
+            if (JournalDataGrid.SelectedItem == null)
             {
                 MessageBox.Show("Выберите запись!");
                 return;
             }
-            Journal journal = notes.SelectedItem as Journal;
-            App.db.Journals.Remove(journal);
-            App.db.SaveChanges();
-            MessageBox.Show("Данные удалены");
-            LoadNotes();
+            if(MessageBox.Show("удалить?", "Предупреждение", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
+            {
+                Journal journal = JournalDataGrid.SelectedItem as Journal;
+                App.db.Journals.Remove(journal);
+                App.db.SaveChanges();
+                MessageBox.Show("Данные удалены");
+                LoadNotes();
+            }
+            
         }
 
         private void clear_Click(object sender, RoutedEventArgs e)

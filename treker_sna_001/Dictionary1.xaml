@@ -22,7 +22,17 @@
                 </LinearGradientBrush>
             </Setter.Value>
         </Setter>
+    </Style>
 
+    <Style TargetType="DataGrid" x:Key="DataGridStyle">
+        <Setter Property="AutoGenerateColumns" Value="False"/>
+        <Setter Property="IsReadOnly" Value="True"/>
+        <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Hidden"/>
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="FontFamily" Value="Montserrat"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="RowBackground" Value="#AE0B597B"/>
+        <Setter Property="AlternatingRowBackground" Value="#AE0B507A"/>
     </Style>
 
     <Style x:Key="btnMenu" TargetType="Button">
@@ -35,6 +45,10 @@
             </Setter.Value>
         </Setter>
     </Style>
+
+    <Style x:Key="ComboBoxStyle" TargetType="ComboBox">
+        <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Hidden"/>
+    </Style>
     
     <Style x:Key="WindowStyle" TargetType="Window">
         <Setter Property="WindowStyle" Value="None"/>
@@ -43,6 +57,7 @@
         <Setter Property="AllowsTransparency" Value="True"/>
         <Setter Property="Foreground" Value="White"/>
     </Style>
+    
     <Style x:Key="pageStyle" TargetType="Page">
         <Setter Property="Background" Value="Transparent"/>
         <Setter Property="Foreground" Value="White"/>

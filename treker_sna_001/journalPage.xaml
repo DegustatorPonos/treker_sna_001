@@ -9,41 +9,28 @@
       Title="journalPage"
       Style="{DynamicResource pageStyle}">
     <Grid>
-        <StackPanel>
-            <StackPanel Orientation="Horizontal">
-                <Button Content="Добавить запись" Name="addnote" Click="addnote_Click"/>
-                <Button Content="Удалить запись" Name="delnote" Click="delnote_Click"/>
-                <Button Content="Очистить журнал" Name="clear" Click="clear_Click"/>
-            </StackPanel>
-            <ListBox Name="notes">
-                <ListBox.ItemTemplate>
-                    <DataTemplate>
-                        <Grid>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="30"/>
-                                <ColumnDefinition Width="95"/>
-                                <ColumnDefinition Width="65"/>
-                                <ColumnDefinition Width="10"/>
-                                <ColumnDefinition Width="130"/>
-                                <ColumnDefinition Width="130"/>
-                                <ColumnDefinition Width="30"/>
-                                <ColumnDefinition Width="30"/>
-                                <ColumnDefinition Width="auto"/>
-                            </Grid.ColumnDefinitions>
-                            <TextBlock Grid.Column="0" Text="{Binding Id}"/>
-                            <TextBlock Grid.Column="1" Text="{Binding TypeDream}"/>
-                            <TextBlock Grid.Column="2" Text="{Binding Feelings}"/>
-                            <TextBlock Grid.Column="3" Text="{Binding WakeUpCount}"/>
-                            <TextBlock Grid.Column="4" Text="{Binding formatStartDate}"/>
-                            <TextBlock Grid.Column="5" Text="{Binding formatEndtDate}"/>
-                            <TextBlock Grid.Column="6" Text="{Binding Stress}"/>
-                            <TextBlock Grid.Column="7" Text="{Binding Phisical}"/>
-                            <TextBlock Grid.Column="8" Text="{Binding Temperature}"/>
-                        </Grid>
-                    </DataTemplate>
-                </ListBox.ItemTemplate>
-            </ListBox>
-            
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="320"/>
+        </Grid.RowDefinitions>
+        
+        <StackPanel Orientation="Horizontal">
+            <Button Content="Добавить запись" Name="addnote" Click="addnote_Click"/>
+            <Button Content="Удалить запись" Name="delnote" Click="delnote_Click"/>
+            <Button Content="Очистить журнал" Name="clear" Click="clear_Click"/>
         </StackPanel>
+
+        <DataGrid Name="JournalDataGrid" Width="800" Style="{StaticResource DataGridStyle}" Grid.Row="1">
+            <DataGrid.Columns>
+                <DataGridTextColumn Width="100" Header="Тип сна" Binding="{Binding TypeDream}" HeaderStyle="{Binding HeaderStyle}" Foreground="DarkGray"/>
+                <DataGridTextColumn Width="90" Header="Ощущения" Binding="{Binding Feelings}" HeaderStyle="{Binding HeaderStyle}" Foreground="DarkGray"/>
+                <DataGridTextColumn Width="100" Header="Пробуждения" Binding="{Binding WakeUpCount}" Foreground="DarkGray"/>
+                <DataGridTextColumn Width="125" Header="Время отбоя" Binding="{Binding formatStartDate}" Foreground="DarkGray"/>
+                <DataGridTextColumn Width="125" Header="Время подъема" Binding="{Binding formatEndtDate}" Foreground="DarkGray"/>
+                <DataGridTextColumn Width="70" Header="Стресс" Binding="{Binding Stress}" Foreground="DarkGray"/>
+                <DataGridTextColumn Width="70" Header="Усталость" Binding="{Binding Phisical}" Foreground="DarkGray"/>
+                <DataGridTextColumn Width="90" Header="Температура" Binding="{Binding Temperature}" Foreground="DarkGray"/>
+            </DataGrid.Columns>
+        </DataGrid>
     </Grid>
 </Page>

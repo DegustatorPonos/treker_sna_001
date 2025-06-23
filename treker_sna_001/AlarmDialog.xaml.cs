@@ -28,7 +28,7 @@ namespace treker_sna_001
         {
             InitializeComponent();
             string text = App.db.Users.Find(wakeUpper.UserIdUser).userLogin;
-            mess.Text = $"{text}, вставай, на работу пора!";
+            mess.Text = $"{text}, время пришло!";
             player = new SoundPlayer(soundFilePath);
             player.PlayLooping();
         }
